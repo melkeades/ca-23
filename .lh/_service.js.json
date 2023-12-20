@@ -1,0 +1,18 @@
+{
+    "sourceFile": "_service.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1703081129650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1703081129650,
+            "name": "Commit-0",
+            "content": "\r\nexport const sel = (e) => document.querySelector(e)\r\nexport const selAll = (e) => document.querySelectorAll(e)\r\nexport const vh = (percent) => window.innerHeight * (percent / 100)\r\nexport const vw = (percent) => window.innerWidth * (percent / 100)\r\n\r\nexport function debounce(func, time = 100) {\r\n  let timer\r\n  return function (event) {\r\n    if (timer) clearTimeout(timer)\r\n    timer = setTimeout(func, time, event)\r\n  }\r\n}\r\nexport function devMode(mode) {\r\n  if (mode === 0) {\r\n    return\r\n  } else if (mode === 1) {\r\n    let i = 0\r\n    document.querySelectorAll('[data-video-urls]').forEach((el) => {\r\n      el.querySelector('video').remove()\r\n      i++\r\n    })\r\n    console.log('devMode, removed videos:', i)\r\n  } else if (mode === 2) {\r\n    const devRemoveList = []\r\n    // const devRemoveList = [videoHero$, introSec$, aboutSec$]\r\n    devRemoveList.forEach((el) => {\r\n      el.remove()\r\n    })\r\n    console.log('devMode: removing sections')\r\n  }\r\n}\r\n\r\nexport function removeSplideClasses(slider) {\r\n  const splide = document.querySelector('.' + slider)\r\n  const track = splide.querySelector('.splide__track')\r\n  const list = splide.querySelector('.splide__list')\r\n  const slide = splide.querySelectorAll('.splide__slide')\r\n  splide.classList.remove('splide')\r\n  track.classList.remove('splide__track')\r\n  list.classList.remove('splide__list')\r\n  slide.forEach((slide) => slide.classList.remove('splide__slide'))\r\n}\r\nexport function addSplideClasses(slider) {\r\n  const splide = document.querySelector('.' + slider)\r\n  const track = splide.children[0]\r\n  const list = track.children[0]\r\n  const slide = list.childNodes\r\n  splide.classList.add('splide')\r\n  track.classList.add('splide__track')\r\n  list.classList.add('splide__list')\r\n  slide.forEach((slide) => slide.classList.add('splide__slide'))\r\n}\r\n\r\nexport function onDomReady(run) {\r\n  if (document.readyState !== 'loading') {\r\n    run()\r\n  } else {\r\n    document.addEventListener('DOMContentLoaded', function () {\r\n      run()\r\n    })\r\n  }\r\n}\r\n"
+        }
+    ]
+}

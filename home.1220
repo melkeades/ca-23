@@ -1,0 +1,243 @@
+import gsap from 'gsap'
+import Splide from '@splidejs/splide'
+import '@splidejs/splide/css'
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
+// import ScrollTrigger from 'gsap/ScrollTrigger'
+export default function home() {
+  console.log('home')
+  function sliderWithImage() {
+    const sliderContainer = document.querySelector('.is--slider')
+    const sliderWrapper = document.querySelector('.slider__with-image-wrapper')
+    const slides = gsap.utils.toArray('.slider__with-image-item')
+    const nextBtn = document.querySelector('#nextBtn')
+    const previousBtn = document.querySelector('#previousBtn')
+    const sliderNav = sliderContainer.querySelector('.slide__naw_wrapper')
+    const dot = sliderNav.querySelector('.slide__nav')
+    const sliderImage = document.querySelector('.slider__image-wrapper')
+    const slideWidth = slides[0].offsetWidth
+
+    const computedStyle = window.getComputedStyle(slides[0])
+    const marginRight = parseInt(computedStyle.marginRight, 10)
+    const totalWidthOfSlides = slideWidth + marginRight
+    sliderWrapper.style.flexDirection = 'row'
+    const sliderWrapperWidth = totalWidthOfSlides * slides.length
+    sliderWrapper.style.width = sliderWrapperWidth + 'px'
+    const numSlides = slides.length
+    const lastSlide = numSlides - 1
+    let slideIndex = 0
+
+    createSliderNav()
+    updateButtonStates()
+    addImages()
+    updateImage()
+    function addImages() {
+      // Clear the existing content in sliderImage
+      sliderImage.innerHTML = ''
+
+      // Loop through each slide and add its images to sliderImage
+      slides.forEach((slide, index) => {
+        // Clone the images to avoid moving them from their original position
+        const images = Array.from(slide.querySelectorAll('img')).map((img) => {
+          const clonedImg = img.cloneNode(true)
+          return clonedImg
+        })
+
+        // Append each image to sliderImage
+        images.forEach((image) => {
+          image.classList.add('slider__image')
+          image.classList.remove('slider__image-hidden')
+          sliderImage.appendChild(image)
+        })
+      })
+    }
+
+    function updateImage() {
+      // Get all images within sliderImage
+      const allImages = sliderImage.querySelectorAll('img')
+
+      // Loop through all images and set opacity
+      allImages.forEach((image, index) => {
+        if (index === slideIndex) {
+          // If it's the current image, set opacity to 1
+          gsap.to(image, { opacity: 1 })
+        } else {
+          // If it's not the current image, set opacity to 0
+          gsap.to(image, { opacity: 0 })
+        }
+      })
+    }
+
+    function createSliderNav() {
+      sliderNav.innerHTML = ''
+
+      for (let i = 0; i < numSlides; i++) {
+        const clonedDot = dot.cloneNode(true)
+        sliderNav.appendChild(clonedDot)
+
+        // Add event listener to each dot
+        clonedDot.addEventListener('click', function () {
+          goToSlide(i)
+        })
+
+        // Add is--wide class to the dot corresponding to the current slide
+        if (i === slideIndex) {
+          clonedDot.classList.add('is--wide')
+        }
+      }
+    }
+
+    function goToSlide(index) {
+      slideIndex = index
+      gsap.to(sliderWrapper, { x: -slideIndex * totalWidthOfSlides })
+
+      // Update button states based on current slide index
+      updateButtonStates()
+
+      // Update dot classes based on current slide index
+      updateDotClasses()
+
+      // Update images based on current slide index
+      updateImage()
+    }
+
+    function updateButtonStates() {
+      // Disable/enable buttons based on current slide index
+      if (slideIndex === 0) {
+        previousBtn.classList.add('is--disabled')
+        nextBtn.classList.remove('is--disabled')
+      } else if (slideIndex === lastSlide) {
+        previousBtn.classList.remove('is--disabled')
+        nextBtn.classList.add('is--disabled')
+      } else {
+        previousBtn.classList.remove('is--disabled')
+        nextBtn.classList.remove('is--disabled')
+      }
+    }
+
+    function updateDotClasses() {
+      const dots = sliderNav.querySelectorAll('.slide__nav')
+
+      // Loop through all dots to add or remove is--wide class
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle('is--wide', i === slideIndex)
+      })
+    }
+
+    nextBtn.addEventListener('pointerdown', function () {
+      if (slideIndex < lastSlide) {
+        slideIndex++
+        gsap.to(sliderWrapper, { x: -slideIndex * totalWidthOfSlides })
+        updateImage()
+      }
+      updateDotClasses()
+      updateButtonStates()
+    })
+
+    previousBtn.addEventListener('pointerdown', function () {
+      if (slideIndex > 0) {
+        slideIndex--
+        gsap.to(sliderWrapper, { x: -slideIndex * totalWidthOfSlides })
+        updateImage()
+      }
+      updateDotClasses()
+
+      updateButtonStates()
+    })
+  }
+
+  function animateDots() {
+    gsap.set('.dot', { opacity: 0 })
+    const scrollDonwIndicator = document.querySelector('.dot__wrapper')
+    const dots = gsap.utils.toArray('.dot__wrapper .dot')
+    const dotTl = gsap.timeline({ repeat: -1 }) // Infinite repeat
+    dotTl.to(dots, {
+      opacity: 1,
+      stagger: 0.05,
+      duration: 0.2,
+      ease: 'power2.inOut',
+    })
+    dotTl.to(dots, { opacity: 0, stagger: -0.05, duration: 0.2, ease: 'power2.inOut' }, '+=0.2')
+  }
+
+  function cardHover() {
+    const cards = gsap.utils.toArray('.collection__item-blog')
+
+    cards.forEach((card) => {
+      let overlay = card.querySelector('.black__white-overlay')
+      let badge = card.querySelector('.blog__tag-w')
+      let title = card.querySelector('.blog__title')
+      let badgeText = card.querySelector('.blog__tag-text')
+
+      let cardTl = gsap.timeline({
+        paused: true,
+        defaults: {
+          duration: 0.5,
+          ease: 'Power2.inOut', // Using Power2 easing for smoother transitions
+        },
+      })
+
+      cardTl
+        .fromTo(overlay, { opacity: 1 }, { opacity: 0.2 }, '<')
+        .fromTo(badge, { backgroundColor: 'white' }, { backgroundColor: '#121216', duration: 0.5 }, '<')
+        .fromTo(badgeText, { color: '#121216' }, { color: 'white', duration: 0.5 }, '<')
+        .to(
+          title,
+          {
+            textDecorationColor: '#0f9',
+            ease: 'Power2.inOut',
+          },
+          '<'
+        )
+
+      card.addEventListener('mouseover', () => {
+        cardTl.timeScale(1).play()
+      })
+
+      card.addEventListener('mouseout', () => {
+        cardTl.timeScale(1).reverse()
+      })
+    })
+  }
+
+  function laptopImagePosition() {
+    const laptopImg = document.querySelector('.whatwedo__image-w')
+    const windowWidth = document.documentElement.clientWidth
+    const greenCardWidth = document.querySelector('#greenCard').offsetWidth
+    const imageWidth = windowWidth / 2 - greenCardWidth
+    laptopImg.style.width = imageWidth + 'px'
+  }
+
+  if (document.readyState !== 'loading') {
+    initCode()
+  } else {
+    document.addEventListener('DOMContentLoaded', function () {
+      initCode()
+    })
+  }
+  function initCode() {
+    let mm = gsap.matchMedia()
+    animateDots()
+    sliderWithImage()
+    laptopImagePosition()
+    cardHover()
+    mm.add(
+      {
+        isDesktop: '(min-width: 991px)',
+        isTablet: '(max-width: 990px) and (min-width: 478px)',
+        isMobile: '(max-width: 477px)',
+      },
+      (context) => {
+        let { isDesktop, isTablet, isMobile } = context.conditions
+
+        if (isDesktop) {
+        }
+        if (isTablet) {
+        }
+        if (isMobile) {
+        }
+
+        return () => {}
+      }
+    )
+  }
+}

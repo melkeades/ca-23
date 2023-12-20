@@ -1,4 +1,7 @@
 
+[slider-cut] .w-dyn-item
+  display block !important
+
 html.lenis
   height auto
 
@@ -17,3 +20,23 @@ html.lenis
 .splide.is-initialized:not(.is-active) .splide__list
   display flex !important
   gap 2rem
+
+.navbar-absolute
+  position absolute
+  left 0
+  top 0
+  right 0
+  z-index 1000
+
+.navbar-sticky
+  .navbar
+    //background var(--black)
+    backdrop-filter blur(30px)
+    background-color rgba(18, 18, 22, .9)
+
+    @media screen and (min-width 992px)
+      .menu-link
+        padding .5rem 1rem 1rem
+
+      .brand
+        padding 0 0 .5rem

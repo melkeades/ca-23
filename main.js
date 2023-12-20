@@ -3,7 +3,10 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Lenis from '@studio-freight/lenis'
 
-gsap.registerPlugin(ScrollTrigger, MotionPathPlugin)
+import Home from './home'
+import * as Study from './study'
+
+gsap.registerPlugin(ScrollTrigger)
 const mq = gsap.matchMedia()
 const mqd = 1440
 const mqt = 991
@@ -36,7 +39,9 @@ switch (sel('.page-wrapper').getAttribute('data-page')) {
     console.log('unknown data-page')
 }
 
-const navbarTl = gsap.to(navbar$, {
+const navbarSticky$ = sel('.navbar-sticky .navbar')
+
+const navbarTl = gsap.to(navbarSticky$, {
   keyframes: { '0%': { opacity: 0 }, '30%': { opacity: 1 }, '100%': { opacity: 1 } },
   yPercent: 100,
   ease: 'linear',
@@ -51,13 +56,16 @@ ScrollTrigger.create({
   },
 })
 
-devMode(0)
 function home() {
+  Home()
+
   mq.add('(max-width: 991px)', () => {})
   mq.add('(max-width: 767px)', () => {})
 }
 function study() {
-  console.log('study')
+  console.log('lll')
+  Study.qwe()
+  Study.xqwe()
 }
 
 function contact() {}
