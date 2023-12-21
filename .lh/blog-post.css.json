@@ -1,0 +1,18 @@
+{
+    "sourceFile": "blog-post.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1703147131451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1703147131451,
+            "name": "Commit-0",
+            "content": ".blog__title{\r\n\r\n}\r\n\r\n.blog__title:hover {\r\n text-decoration-color: #0f9;\r\n\t-webkit-text-decoration-color: #0f9;\r\n}\r\n\r\n.blog__rich_text blockquote::before {\r\ncontent:'\"';\r\nposition: absolute;\r\ntop:-25%;\r\nbottom: 0;\r\nleft: 50%;\r\ntransform: translateX(-50%);\r\nfont-size: 7.5rem;\r\nfont-style: italic;\r\ncolor: #0f9;\r\nfont-weight: 700;\r\nheight: auto;\r\n}\r\n@media screen and (max-width: 990px){\r\n.w-richtext figure {\r\nmax-width: 100%;\r\n}\r\n.w-richtext figure.w-richtext-align-floatright {\r\nmargin-left: 0px;\r\n}\r\n}\r\n@media screen and (max-width: 766px){\r\n.blog__rich_text blockquote::before {\r\ntop:-30%;\r\nbottom: 0;\r\nfont-size:5rem;\r\n}\r\n}\r\n@media screen and (max-width: 477px){\r\n.blog__rich_text blockquote::before {\r\ntop:-15%;\r\nbottom: 0;\r\nfont-size:4rem;\r\n}\r\n}"
+        }
+    ]
+}

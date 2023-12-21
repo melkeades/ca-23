@@ -4,8 +4,10 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import Lenis from '@studio-freight/lenis'
 
 import Home from './home'
+import About from './about'
 import Blog from './blog'
 import Study from './study'
+import BlogPost from './blog-post'
 // import * as Services from './_services'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -31,11 +33,22 @@ switch (sel('.page-wrapper').getAttribute('data-page')) {
   case 'home':
     Home()
     break
+  case 'our-work':
+    break
   case 'study':
     Study()
     break
   case 'blog':
     Blog()
+    break
+  case 'blog-post':
+    BlogPost()
+    break
+  case 'about':
+    About()
+    break
+  case 'services':
+    Services()
     break
   case 'error':
     error()
@@ -60,7 +73,9 @@ ScrollTrigger.create({
     gsap.to(navbarTl, { duration: 1.5, progress: direction === 1 ? 1 : 0, ease: 'expo.out' })
   },
 })
-
+function Services() {
+  // console.log('services')
+}
 function home() {
   Home()
 }

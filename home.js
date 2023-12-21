@@ -3,7 +3,7 @@ import Splide from '@splidejs/splide'
 import '@splidejs/splide/css'
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
 import { Intersection } from '@splidejs/splide-extension-intersection'
-import { sel, addSplideClasses, onDomReady, connectSplideArrows } from './_service'
+import { sel, addSplideClasses, onDomReady, connectSplideArrows, connectSplideBullets } from './_service'
 
 // import ScrollTrigger from 'gsap/ScrollTrigger'
 export default function home() {
@@ -57,29 +57,7 @@ export default function home() {
     ourWorkImgSlider.mount()
 
     connectSplideArrows(ourWorkInfoSlider, name)
-    // parse bullets inside the container and repopulate
-    const pagination$ = sel(`.${name}__pagination`)
-    let bulletPressed = false
-    if (ourWorkInfoSlider.length > 1) {
-      const bullet$ = sel(`.${name}__pagination .bullet:not(.bullet--active)`)
-      let fragment = document.createDocumentFragment()
-      for (let i = 0; i < ourWorkInfoSlider.length; i++) {
-        let clone$ = bullet$.cloneNode(true)
-        clone$.addEventListener('click', (e) => {
-          bulletPressed = true
-          ourWorkInfoSlider.go(i)
-        })
-        fragment.appendChild(clone$)
-      }
-      fragment.firstChild.classList.add('bullet--active')
-      pagination$.replaceChildren(fragment)
-    } else {
-      pagination$.replaceChildren()
-    }
-    ourWorkInfoSlider.on('move', function (newIndex, oldIndex) {
-      sel(`.${name}__pagination .bullet--active`).classList.remove('bullet--active')
-      sel(`.${name}__pagination .bullet:nth-of-type(${ourWorkImgSlider.index + 1})`).classList.add('bullet--active')
-    })
+    connectSplideBullets(ourWorkInfoSlider, name)
   }
   ourWorkSliderInit()
 
