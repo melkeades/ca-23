@@ -51,6 +51,88 @@ export function addSplideClasses(slider) {
   slide.forEach((slide) => slide.classList.add('splide__slide'))
 }
 
+export function connectSplideArrows(splide, classPrefix) {
+  sel(`.${classPrefix}__arrows .arrow--left`).addEventListener('pointerdown', function () {
+    splide.go('<')
+  })
+
+  sel(`.${classPrefix}__arrows .arrow:not(.arrow--left)`).addEventListener('pointerdown', function () {
+    splide.go('>')
+  })
+}
+export function connectSplideBullets(splide, classPrefix) {
+  // parse bullets inside the container and repopulate
+  const pagination$ = sel(`.${classPrefix}__pagination`)
+  let bulletPressed = false
+  if (splide.length > 1) {
+    const bullet$ = sel(`.${classPrefix}__pagination .bullet:not(.bullet--active)`)
+    let fragment = document.createDocumentFragment()
+    for (let i = 0; i < splide.length; i++) {
+      let clone$ = bullet$.cloneNode(true)
+      clone$.addEventListener('click', (e) => {
+        bulletPressed = true
+        splide.go(i)
+      })
+      fragment.appendChild(clone$)
+    }
+    fragment.firstChild.classList.add('bullet--active')
+    pagination$.replaceChildren(fragment)
+  } else {
+    pagination$.replaceChildren()
+  }
+  splide.on('move', function (newIndex, oldIndex) {
+    sel(`.${classPrefix}__pagination .bullet--active`).classList.remove('bullet--active')
+    sel(`.${classPrefix}__pagination .bullet:nth-of-type(${splide.index + 1})`).classList.add('bullet--active')
+  })
+}
+
+export function splideAutoWidth(splide) {
+  // if not enough logos it will center them and stop the slider
+  const Components = splide.Components
+  // to remove duplicates for inactive/small slider
+  splide.on('overflow', function (isOverflow) {
+    splide.go(0) // Reset the carousel position
+
+    splide.options = {
+      focus: isOverflow ? 'center' : '',
+      drag: isOverflow ? 'free' : false,
+      clones: isOverflow ? undefined : 0, // Toggle clones
+    }
+  })
+  let sliderOverflow = true
+  let sliderReady = false
+  // to center inactive/small slider
+  splide.on('resized', function () {
+    var isOverflow = Components.Layout.isOverflow()
+    sliderOverflow = isOverflow
+    var list = Components.Elements.list
+    var lastSlide = Components.Slides.getAt(splide.length - 1)
+
+    if (lastSlide) {
+      // Toggles `justify-content: center`
+      list.style.justifyContent = isOverflow ? '' : 'center'
+
+      // Remove the last margin
+      if (!isOverflow) {
+        lastSlide.slide.style.marginRight = ''
+      }
+    }
+    if (sliderReady) {
+      s2PlayInit()
+    }
+  })
+  splide.on('mounted', s2PlayInit)
+  function s2PlayInit() {
+    sliderReady = true
+    if (!sliderOverflow) {
+      splide.Components.AutoScroll.pause()
+    } else if (sliderOverflow && splide.Components.AutoScroll.isPaused()) {
+      // } else if (sliderOverflow && splide.Components.AutoScroll?.isPaused()) {
+      splide.Components.AutoScroll.play()
+    }
+  }
+}
+
 export function onDomReady(run) {
   if (document.readyState !== 'loading') {
     run()

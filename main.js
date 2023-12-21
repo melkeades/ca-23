@@ -4,7 +4,9 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import Lenis from '@studio-freight/lenis'
 
 import Home from './home'
-import * as Study from './study'
+import Blog from './blog'
+import Study from './study'
+// import * as Services from './_services'
 
 gsap.registerPlugin(ScrollTrigger)
 const mq = gsap.matchMedia()
@@ -27,10 +29,13 @@ requestAnimationFrame(raf)
 
 switch (sel('.page-wrapper').getAttribute('data-page')) {
   case 'home':
-    home()
+    Home()
     break
   case 'study':
-    study()
+    Study()
+    break
+  case 'blog':
+    Blog()
     break
   case 'error':
     error()
@@ -58,14 +63,11 @@ ScrollTrigger.create({
 
 function home() {
   Home()
-
-  mq.add('(max-width: 991px)', () => {})
-  mq.add('(max-width: 767px)', () => {})
 }
 function study() {
-  console.log('lll')
-  Study.qwe()
-  Study.xqwe()
+  Study()
 }
-
+function blog() {
+  Blog()
+}
 function contact() {}

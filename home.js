@@ -3,11 +3,11 @@ import Splide from '@splidejs/splide'
 import '@splidejs/splide/css'
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
 import { Intersection } from '@splidejs/splide-extension-intersection'
-import { sel, addSplideClasses, onDomReady } from './_service'
+import { sel, addSplideClasses, onDomReady, connectSplideArrows } from './_service'
 
 // import ScrollTrigger from 'gsap/ScrollTrigger'
 export default function home() {
-  // console.log('home')
+  console.log('home')
   function ourWorkSliderInit() {
     const name = 'our-work'
     const ourWorkInfoSlider_ = name + '__info-slider'
@@ -56,13 +56,7 @@ export default function home() {
     ourWorkInfoSlider.mount({ Intersection })
     ourWorkImgSlider.mount()
 
-    sel(`.${name}__arrows-wrap .arrow--left`).addEventListener('pointerdown', function () {
-      ourWorkInfoSlider.go('-1')
-    })
-
-    sel(`.${name}__arrows-wrap .arrow:not(.arrow--left)`).addEventListener('pointerdown', function () {
-      ourWorkInfoSlider.go('+1')
-    })
+    connectSplideArrows(ourWorkInfoSlider, name)
     // parse bullets inside the container and repopulate
     const pagination$ = sel(`.${name}__pagination`)
     let bulletPressed = false
@@ -151,17 +145,9 @@ export default function home() {
     laptopImg.style.width = imageWidth + 'px'
   }
 
-  if (document.readyState !== 'loading') {
-    initCode()
-  } else {
-    document.addEventListener('DOMContentLoaded', function () {
-      initCode()
-    })
-  }
-  function initCode() {
+  onDomReady(() => {
     let mm = gsap.matchMedia()
     animateDots()
-
     laptopImagePosition()
     cardHover()
     mm.add(
@@ -183,5 +169,5 @@ export default function home() {
         return () => {}
       }
     )
-  }
+  })
 }

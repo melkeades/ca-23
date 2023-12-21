@@ -1,9 +1,7 @@
 import gsap from 'gsap'
+import { onDomReady } from './_service'
 
-export const xqwe = () => {
-  console.log('xxxx')
-}
-export const qwe = () => {
+export default function study() {
   console.log('study')
 
   function deliverablesSlider() {
@@ -72,120 +70,12 @@ export const qwe = () => {
     })
   }
 
-  function sliderWithImage() {
-    const sliderContainer = document.querySelector('.slider__container.is--portfolio')
-    const sliderWrapper = document.querySelector('.slider__with-image-wrapper')
-    const slides = gsap.utils.toArray('.slider__with-image-item')
-    const nextBtn = document.querySelector('#nextBtnImageSlider')
-    const previousBtn = document.querySelector('#previousBtnImageSlider')
-    const sliderImage = document.querySelector('.slider__image-wrapper')
-    const slideWidth = slides[0].offsetWidth
-
-    const computedStyle = window.getComputedStyle(slides[0])
-    const marginRight = parseInt(computedStyle.marginRight, 10)
-    const totalWidthOfSlides = slideWidth + marginRight
-    sliderWrapper.style.flexDirection = 'row'
-    const sliderWrapperWidth = totalWidthOfSlides * slides.length
-    sliderWrapper.style.width = sliderWrapperWidth + 'px'
-    const numSlides = slides.length
-    const lastSlide = numSlides - 1
-    let slideIndex = 0
-
-    updateButtonStates()
-    addImages()
-    updateImage()
-    function addImages() {
-      // Clear the existing content in sliderImage
-      sliderImage.innerHTML = ''
-
-      // Loop through each slide and add its images to sliderImage
-      slides.forEach((slide, index) => {
-        // Clone the images to avoid moving them from their original position
-        const images = Array.from(slide.querySelectorAll('img')).map((img) => {
-          const clonedImg = img.cloneNode(true)
-          return clonedImg
-        })
-
-        // Append each image to sliderImage
-        images.forEach((image) => {
-          image.classList.add('slider__image')
-          image.classList.remove('slider__image-hidden')
-          sliderImage.appendChild(image)
-        })
-      })
-    }
-
-    function updateImage() {
-      // Get all images within sliderImage
-      const allImages = sliderImage.querySelectorAll('img')
-
-      // Loop through all images and set opacity
-      allImages.forEach((image, index) => {
-        if (index === slideIndex) {
-          // If it's the current image, set opacity to 1
-          gsap.to(image, { opacity: 1 })
-        } else {
-          // If it's not the current image, set opacity to 0
-          gsap.to(image, { opacity: 0 })
-        }
-      })
-    }
-    function goToSlide(index) {
-      slideIndex = index
-      gsap.to(sliderWrapper, { x: -slideIndex * totalWidthOfSlides })
-
-      // Update button states based on current slide index
-      updateButtonStates()
-      // Update images based on current slide index
-      updateImage()
-    }
-
-    function updateButtonStates() {
-      // Disable/enable buttons based on current slide index
-      if (slideIndex === 0) {
-        previousBtn.classList.add('is--disabled')
-        nextBtn.classList.remove('is--disabled')
-      } else if (slideIndex === lastSlide) {
-        previousBtn.classList.remove('is--disabled')
-        nextBtn.classList.add('is--disabled')
-      } else {
-        previousBtn.classList.remove('is--disabled')
-        nextBtn.classList.remove('is--disabled')
-      }
-    }
-
-    nextBtn.addEventListener('pointerdown', function () {
-      if (slideIndex < lastSlide) {
-        slideIndex++
-        gsap.to(sliderWrapper, { x: -slideIndex * totalWidthOfSlides })
-        updateImage()
-      }
-      updateButtonStates()
-    })
-
-    previousBtn.addEventListener('pointerdown', function () {
-      if (slideIndex > 0) {
-        slideIndex--
-        gsap.to(sliderWrapper, { x: -slideIndex * totalWidthOfSlides })
-        updateImage()
-      }
-      updateButtonStates()
-    })
-  }
-
-  if (document.readyState !== 'loading') {
-    initCode()
-  } else {
-    document.addEventListener('DOMContentLoaded', function () {
-      initCode()
-    })
-  }
-  function initCode() {
+  onDomReady(() => {
     console.log('loaded')
 
     let mm = gsap.matchMedia()
     deliverablesSlider()
-    sliderWithImage()
+    // sliderWithImage()
     mm.add(
       {
         isDesktop: '(min-width: 991px)',
@@ -205,5 +95,5 @@ export const qwe = () => {
         return () => {}
       }
     )
-  }
+  })
 }

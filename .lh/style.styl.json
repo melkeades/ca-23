@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 26,
+            "activePatchIndex": 29,
             "patches": [
                 {
                     "date": 1701728370995,
@@ -112,6 +112,18 @@
                 {
                     "date": 1703054832055,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,8 @@\n \r\n+[slider-cut] .w-dyn-item\r\n+  display block !important\r\n+\r\n html.lenis\r\n   height auto\r\n \r\n .lenis.lenis-smooth\r\n"
+                },
+                {
+                    "date": 1703112495565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,44 @@\n+\r\n+[slider-cut] .w-dyn-item\r\n+  display block !important\r\n+\r\n+html.lenis\r\n+  height auto\r\n+\r\n+.lenis.lenis-smooth\r\n+  scroll-behavior auto\r\n+\r\n+.lenis.lenis-smooth [data-lenis-prevent]\r\n+  overscroll-behavior contain\r\n+\r\n+.lenis.lenis-stopped\r\n+  overflow hidden\r\n+\r\n+.lenis.lenis-scrolling iframe\r\n+  pointer-events none\r\n+\r\n+.splide.is-initialized:not(.is-active) .splide__list\r\n+  display flex !important\r\n+  gap 2rem\r\n+\r\n+.navbar-absolute\r\n+  position absolute\r\n+  left 0\r\n+  top 0\r\n+  right 0\r\n+  z-index 1000\r\n+\r\n+.navbar-sticky\r\n+  .navbar\r\n+    //background var(--black)\r\n+    backdrop-filter blur(30px)\r\n+    background-color rgba(18, 18, 22, .9)\r\n+    height auto\r\n+    padding 2rem 0\r\n+\r\n+    @media screen and (min-width 992px)\r\n+      .menu-link\r\n+        padding .5rem 1rem 1rem\r\n+\r\n+      .brand\r\n+        padding 0 0 .5rem\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1703112502143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,44 @@\n+\r\n+[slider-cut] .w-dyn-item\r\n+  display block !important\r\n+\r\n+html.lenis\r\n+  height auto\r\n+\r\n+.lenis.lenis-smooth\r\n+  scroll-behavior auto\r\n+\r\n+.lenis.lenis-smooth [data-lenis-prevent]\r\n+  overscroll-behavior contain\r\n+\r\n+.lenis.lenis-stopped\r\n+  overflow hidden\r\n+\r\n+.lenis.lenis-scrolling iframe\r\n+  pointer-events none\r\n+\r\n+.splide.is-initialized:not(.is-active) .splide__list\r\n+  display flex !important\r\n+  gap 2rem\r\n+\r\n+.navbar-absolute\r\n+  position absolute\r\n+  left 0\r\n+  top 0\r\n+  right 0\r\n+  z-index 1000\r\n+\r\n+.navbar-sticky\r\n+  .navbar\r\n+    //background var(--black)\r\n+    backdrop-filter blur(30px)\r\n+    background-color rgba(18, 18, 22, .9)\r\n+    height auto\r\n+    padding 1.5rem 0\r\n+\r\n+    @media screen and (min-width 992px)\r\n+      .menu-link\r\n+        padding .5rem 1rem 1rem\r\n+\r\n+      .brand\r\n+        padding 0 0 .5rem\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1703114313122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,11 +33,12 @@\n     //background var(--black)\r\n     backdrop-filter blur(30px)\r\n     background-color rgba(18, 18, 22, .9)\r\n     height auto\r\n-    padding 1.5rem 0\r\n \r\n     @media screen and (min-width 992px)\r\n+      padding 1.5rem 0\r\n+\r\n       .menu-link\r\n         padding .5rem 1rem 1rem\r\n \r\n       .brand\r\n"
                 }
             ],
             "date": 1701728370994,
