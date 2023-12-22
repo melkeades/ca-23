@@ -1,15 +1,22 @@
  .blog__rich_text
+    --float-gap: 4rem;
+    @media screen and (max-width: 767px)
+      --float-gap: 1rem;
    .w-richtext-align-floatleft
-    padding 2rem 4rem 2rem 0
-    width 55%
+    padding calc(var(--float-gap) / 2) var(--float-gap) calc(var(--float-gap) /2) 0
   .w-richtext-align-floatright
-    padding 2rem 0 2rem 4rem
-    width 55%
+    padding  calc(var(--float-gap) /2) 0 calc(var(--float-gap) /2) var(--float-gap) 
   .w-richtext-align-center
     padding 2rem 0 2rem 0
     width 100%
     margin 0 auto !important
     text-align center
+  .w-richtext-align-floatleft,   .w-richtext-align-floatright
+    margin-bottom 0
+    width 55%
+
+
+
     // div
     //   margin:  auto !important
     //   img
