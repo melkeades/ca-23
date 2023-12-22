@@ -3,7 +3,7 @@ import Splide from '@splidejs/splide'
 import '@splidejs/splide/css'
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
 import { Intersection } from '@splidejs/splide-extension-intersection'
-import { sel, addSplideClasses, onDomReady, connectSplideArrows, connectSplideBullets } from './_service'
+import { sel, addSplideClasses, onDomReady, connectSplideArrows, connectSplideBullets, splideAutoWidth } from './_service'
 
 // import ScrollTrigger from 'gsap/ScrollTrigger'
 export default function home() {
@@ -59,7 +59,6 @@ export default function home() {
     connectSplideArrows(ourWorkInfoSlider, name)
     connectSplideBullets(ourWorkInfoSlider, name)
   }
-  ourWorkSliderInit()
 
   function animateDots() {
     gsap.set('.dot', { opacity: 0 })
@@ -123,29 +122,32 @@ export default function home() {
     laptopImg.style.width = imageWidth + 'px'
   }
 
+  function logosSliderInit() {
+    const classPrefix = 'featured-logos'
+    addSplideClasses(classPrefix + '__slider')
+    const slider = new Splide(sel(`.${classPrefix}__slider`), {
+      arrows: false,
+      pagination: false,
+      gap: '6rem',
+      type: 'loop',
+      autoWidth: true,
+      autoScroll: { speed: 0.6, autoStart: false },
+      breakpoints: {
+        767: {
+          gap: '2rem',
+        },
+      },
+    })
+
+    //
+    splideAutoWidth(slider)
+    slider.mount({ AutoScroll })
+  }
   onDomReady(() => {
-    let mm = gsap.matchMedia()
+    logosSliderInit()
+    ourWorkSliderInit()
     animateDots()
     laptopImagePosition()
-    cardHover()
-    mm.add(
-      {
-        isDesktop: '(min-width: 991px)',
-        isTablet: '(max-width: 990px) and (min-width: 478px)',
-        isMobile: '(max-width: 477px)',
-      },
-      (context) => {
-        let { isDesktop, isTablet, isMobile } = context.conditions
-
-        if (isDesktop) {
-        }
-        if (isTablet) {
-        }
-        if (isMobile) {
-        }
-
-        return () => {}
-      }
-    )
+    // cardHover()
   })
 }

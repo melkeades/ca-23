@@ -7,46 +7,46 @@ import gsap from 'gsap'
 export default function blog() {
   console.log('blogg')
 
-  function cardHover() {
-    const cards = gsap.utils.toArray('.collection__item-blog')
-    // console.log(cards)
+  // function cardHover() {
+  //   const cards = gsap.utils.toArray('.collection__item-blog')
+  //   // console.log(cards)
 
-    cards.forEach((card) => {
-      let overlay = card.querySelector('.black__white-overlay')
-      let badge = card.querySelector('.blog__tag-w')
-      let title = card.querySelector('.blog__title')
-      let badgeText = card.querySelector('.blog__tag-text')
+  //   cards.forEach((card) => {
+  //     let overlay = card.querySelector('.black__white-overlay')
+  //     let badge = card.querySelector('.blog__tag-w')
+  //     let title = card.querySelector('.blog__title')
+  //     let badgeText = card.querySelector('.blog__tag-text')
 
-      let cardTl = gsap.timeline({
-        paused: true,
-        defaults: {
-          duration: 0.5,
-          ease: 'Power2.inOut', // Using Power2 easing for smoother transitions
-        },
-      })
+  //     let cardTl = gsap.timeline({
+  //       paused: true,
+  //       defaults: {
+  //         duration: 0.5,
+  //         ease: 'Power2.inOut', // Using Power2 easing for smoother transitions
+  //       },
+  //     })
 
-      cardTl
-        .fromTo(overlay, { opacity: 1 }, { opacity: 0.2 }, '<')
-        .fromTo(badge, { backgroundColor: 'white' }, { backgroundColor: '#121216', duration: 0.5 }, '<')
-        .fromTo(badgeText, { color: '#121216' }, { color: 'white', duration: 0.5 }, '<')
-        .to(
-          title,
-          {
-            textDecorationColor: '#0f9',
-            ease: 'Power2.inOut',
-          },
-          '<'
-        )
+  //     cardTl
+  //       .fromTo(overlay, { opacity: 1 }, { opacity: 0.2 }, '<')
+  //       .fromTo(badge, { backgroundColor: 'white' }, { backgroundColor: '#121216', duration: 0.5 }, '<')
+  //       .fromTo(badgeText, { color: '#121216' }, { color: 'white', duration: 0.5 }, '<')
+  //       .to(
+  //         title,
+  //         {
+  //           textDecorationColor: '#0f9',
+  //           ease: 'Power2.inOut',
+  //         },
+  //         '<'
+  //       )
 
-      card.addEventListener('mouseover', () => {
-        cardTl.timeScale(1).play()
-      })
+  //     card.addEventListener('mouseover', () => {
+  //       cardTl.timeScale(1).play()
+  //     })
 
-      card.addEventListener('mouseout', () => {
-        cardTl.timeScale(1).reverse()
-      })
-    })
-  }
+  //     card.addEventListener('mouseout', () => {
+  //       cardTl.timeScale(1).reverse()
+  //     })
+  //   })
+  // }
 
   function sliderInit() {
     const classPrefix = 'blog-featured'
@@ -62,7 +62,7 @@ export default function blog() {
       speed: 1500,
       interval: 5000,
       easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
-      autoplay: 'true',
+      // autoplay: 'true',
       intersection: {
         inView: {
           autoplay: true,
@@ -90,7 +90,7 @@ export default function blog() {
   onDomReady(() => {
     let mm = gsap.matchMedia()
     sliderInit()
-    cardHover()
+    // cardHover()
     mm.add(
       {
         isDesktop: '(min-width: 991px)',

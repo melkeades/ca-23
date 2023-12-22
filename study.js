@@ -58,7 +58,9 @@ export default function study() {
     })
   }
 
-  function changeDeliverablesText(slides) {
+  function changeDeliverablesText() {
+    const slides = gsap.utils.toArray('.deliverables__slider-item')
+
     slides.forEach((slide) => {
       const altText = slide.querySelector('img').alt
       let parts = altText.split(' - ')
@@ -130,6 +132,7 @@ export default function study() {
 
     let mm = gsap.matchMedia()
     deliverablesSlider()
+    changeDeliverablesText()
     // sliderWithImage()
     mm.add(
       {
