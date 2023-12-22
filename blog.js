@@ -1,3 +1,4 @@
+import './blog.styl'
 import { sel, onDomReady, addSplideClasses, connectSplideArrows } from './_service'
 import Splide from '@splidejs/splide'
 import '@splidejs/splide/css'

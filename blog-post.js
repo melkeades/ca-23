@@ -1,6 +1,7 @@
 import Splide from '@splidejs/splide'
 import { addSplideClasses, connectSplideArrows, onDomReady, sel } from './_service'
 import gsap from 'gsap'
+import './blog.styl'
 import './blog-post.styl'
 
 export default function BlogPost() {

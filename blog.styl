@@ -1,0 +1,43 @@
+ease()
+    transition:  all 1s var(--ease-expo-out)
+.blog-featured__item, .blog-list__item, .blog-related__item
+    :hover
+        .nested-collection, .blog-tag-wrap
+            opacity 1
+        .blog-card__img
+            transform:  translate3d(-50%, -50%, 1px) scale(1.1)
+        .link__arrow
+            opacity 0
+        .blog-card__title
+            text-decoration-color rgba(0, 255, 153, 1) 
+        .blog-card__img-dim
+            opacity 0
+
+    .nested-collection
+        ease()
+        display flex
+        opacity 0
+    .blog-tag-wrap
+        opacity 0
+    .blog-card__img-wrap
+        // ::after
+        //     content ''
+        //     display block
+        //     background: black
+        //     inset 0
+        //     position absolute
+        //     // filter luminosity(red)
+        //     z-index 20
+    .blog-card__img
+        ease()
+    .blog-card__img-dim
+        ease()
+    .blog-card__title
+        ease()
+        text-decoration: underline
+        text-decoration-color rgba(0, 255, 153, 0) 
+        text-decoration-thickness 1.1px
+        text-underline-offset 0.2em
+    .link__arrow
+         ease()
+        
