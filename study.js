@@ -126,11 +126,12 @@ export default function study() {
     connectSplideArrows(ourWorkInfoSlider, name)
     connectSplideBullets(ourWorkInfoSlider, name)
   }
-  ourWorkSliderInit()
   onDomReady(() => {
     console.log('loaded')
 
     let mm = gsap.matchMedia()
+    ourWorkSliderInit()
+
     deliverablesSlider()
     changeDeliverablesText()
     // sliderWithImage()
