@@ -131,7 +131,7 @@ export default function study() {
     const bgSt$ = sel('.cs-hero__bg-st')
     const info$ = sel('.cs-hero__info')
     const bgStTl = gsap.timeline({ paused: true })
-    bgStTl.to(bgSt$, { y: '60%' }, 0).to(info$, { y: -500, opacity: 0 }, 0)
+    bgStTl.to(bgSt$, { y: '80%' }, 0).to(info$, { y: -500, opacity: 0 }, 0)
     ScrollTrigger.create({
       animation: bgStTl,
       start: 'top top',
