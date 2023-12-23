@@ -1,5 +1,5 @@
 import './blog.styl'
-import { sel, onDomReady, addSplideClasses, connectSplideArrows } from './_service'
+import { sel, onDomReady, addSplideClasses, connectSplideArrows } from './utils'
 import Splide from '@splidejs/splide'
 import '@splidejs/splide/css'
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'

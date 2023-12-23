@@ -1,4 +1,4 @@
-import { sel, addSplideClasses, splideAutoWidth, onDomReady } from './_service'
+import { sel, addSplideClasses, splideAutoWidth, onDomReady } from './utils'
 import Splide from '@splidejs/splide'
 import '@splidejs/splide/css'
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'

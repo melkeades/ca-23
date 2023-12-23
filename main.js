@@ -8,26 +8,33 @@ import About from './about'
 import Blog from './blog'
 import Study from './study'
 import BlogPost from './blog-post'
-// import * as Services from './_services'
+import { sel, vh } from './utils'
 
 gsap.registerPlugin(ScrollTrigger)
-const mq = gsap.matchMedia()
-const mqd = 1440
-const mqt = 991
-const mql = 767
-const mqm = 478
-
-const sel = (e) => document.querySelector(e)
-const selAll = (e) => document.querySelectorAll(e)
-const vh = (percent) => window.innerHeight * (percent / 100)
-const vw = (percent) => window.innerWidth * (percent / 100)
 
 const lenis = new Lenis()
-function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
-requestAnimationFrame(raf)
+lenis.on('scroll', ScrollTrigger.update)
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000)
+})
+gsap.ticker.lagSmoothing(0)
+
+const navbarSticky$ = sel('.navbar-sticky .navbar')
+
+const navbarTl = gsap.to(navbarSticky$, {
+  keyframes: { '0%': { opacity: 0 }, '30%': { opacity: 1 }, '100%': { opacity: 1 } },
+  yPercent: 100,
+  ease: 'linear',
+  paused: true,
+})
+ScrollTrigger.create({
+  trigger: 'body',
+  start: vh(100) + ' top',
+  onToggle({ direction, getVelocity }) {
+    // to reverse the easing
+    gsap.to(navbarTl, { duration: 1.5, progress: direction === 1 ? 1 : 0, ease: 'expo.out' })
+  },
+})
 
 switch (sel('.page-wrapper').getAttribute('data-page')) {
   case 'home':
@@ -48,7 +55,7 @@ switch (sel('.page-wrapper').getAttribute('data-page')) {
     About()
     break
   case 'services':
-    Services()
+    // Services()
     break
   case 'error':
     error()
@@ -56,33 +63,3 @@ switch (sel('.page-wrapper').getAttribute('data-page')) {
   default:
     console.log('unknown data-page')
 }
-
-const navbarSticky$ = sel('.navbar-sticky .navbar')
-
-const navbarTl = gsap.to(navbarSticky$, {
-  keyframes: { '0%': { opacity: 0 }, '30%': { opacity: 1 }, '100%': { opacity: 1 } },
-  yPercent: 100,
-  ease: 'linear',
-  paused: true,
-})
-ScrollTrigger.create({
-  trigger: 'body',
-  start: vh(100) + ' top',
-  onToggle({ direction, getVelocity }) {
-    // to reverse the easing
-    gsap.to(navbarTl, { duration: 1.5, progress: direction === 1 ? 1 : 0, ease: 'expo.out' })
-  },
-})
-function Services() {
-  // console.log('services')
-}
-function home() {
-  Home()
-}
-function study() {
-  Study()
-}
-function blog() {
-  Blog()
-}
-function contact() {}

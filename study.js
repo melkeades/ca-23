@@ -1,8 +1,9 @@
 import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 import Splide from '@splidejs/splide'
 import '@splidejs/splide/css'
 import { Intersection } from '@splidejs/splide-extension-intersection'
-import { addSplideClasses, connectSplideArrows, connectSplideBullets, onDomReady, sel } from './_service'
+import { addSplideClasses, connectSplideArrows, connectSplideBullets, onDomReady, sel } from './utils'
 
 export default function study() {
   console.log('study')
@@ -126,15 +127,26 @@ export default function study() {
     connectSplideArrows(ourWorkInfoSlider, name)
     connectSplideBullets(ourWorkInfoSlider, name)
   }
+  function heroStInit() {
+    const bgSt$ = sel('.cs-hero__bg-st')
+    const info$ = sel('.cs-hero__info')
+    const bgStTl = gsap.timeline({ paused: true })
+    bgStTl.to(bgSt$, { y: '40%' }, 0).to(info$, { y: -500, opacity: 0 }, 0)
+    ScrollTrigger.create({
+      animation: bgStTl,
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true,
+    })
+  }
   onDomReady(() => {
-    console.log('loaded')
-
-    let mm = gsap.matchMedia()
+    heroStInit()
     ourWorkSliderInit()
 
     deliverablesSlider()
     changeDeliverablesText()
     // sliderWithImage()
+    let mm = gsap.matchMedia()
     mm.add(
       {
         isDesktop: '(min-width: 991px)',

@@ -3,7 +3,7 @@ import Splide from '@splidejs/splide'
 import '@splidejs/splide/css'
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
 import { Intersection } from '@splidejs/splide-extension-intersection'
-import { sel, addSplideClasses, onDomReady, connectSplideArrows, connectSplideBullets, splideAutoWidth } from './_service'
+import { sel, addSplideClasses, onDomReady, connectSplideArrows, connectSplideBullets, splideAutoWidth } from './utils'
 
 // import ScrollTrigger from 'gsap/ScrollTrigger'
 export default function home() {
