@@ -52,19 +52,19 @@ html.lenis
     &:nth-of-type(odd)
       transform translateY( calc(-50% - 1.125rem))
 
-
-.collection__list_team_grid.is--on .team__member-w
-  transition all 300ms ease-out
-  background: rgba(30,30,36,0)
-  .team__member-hover
-    position absolute
-    opacity 0
-    transition: inherit
-  .team__member-img-w
-    transition: inherit
-  &:hover
-    background: rgba(30,30,36,1)
+@media screen and (min-width: 768px)
+  .collection__list_team_grid.is--on .team__member-w
+    transition all 300ms ease-out
+    background: rgba(30,30,36,0)
     .team__member-hover
-      opacity 1
-    .team__member-img-w
+      position absolute
       opacity 0
+      transition: inherit
+    .team__member-img-w
+      transition: inherit
+    &:hover
+      background: rgba(30,30,36,1)
+      .team__member-hover
+        opacity 1
+      .team__member-img-w
+        opacity 0
