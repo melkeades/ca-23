@@ -2,23 +2,37 @@
     --float-gap: 4rem;
     @media screen and (max-width: 767px)
       --float-gap: 1rem;
-   .w-richtext-align-floatleft
-    padding calc(var(--float-gap) / 2) var(--float-gap) calc(var(--float-gap) /2) 0
-  .w-richtext-align-floatright
-    padding  calc(var(--float-gap) /2) 0 calc(var(--float-gap) /2) var(--float-gap) 
-  .w-richtext-align-center
-    padding 2rem 0 2rem 0
-    width 100%
-    margin 0 auto !important
-    text-align center
-  .w-richtext-align-floatleft,   .w-richtext-align-floatright
-    margin-bottom 0
-    width 55%
-  .w-richtext-align-fullwidth
-    margin 0
-    padding 2rem 0;
-    >div
-      padding 0
+      .w-richtext-figure-type-image:not(.w-richtext-align-floatleft)
+        max-width: none !important;
+
+    figcaption
+      font-size 0.75rem !important
+      margin-top 0
+      padding-top 1rem
+      display inline-block !important
+      text-wrap balance
+      a
+        font-size 0.75rem !important
+
+    // .w-richtext-figure-type-image:not(.w-richtext-align-floatleft)
+    //   max-width 100%
+    .w-richtext-align-floatleft
+      padding calc(var(--float-gap) / 2) var(--float-gap) calc(var(--float-gap) /2) 0
+    .w-richtext-align-floatright
+      padding  calc(var(--float-gap) /2) 0 calc(var(--float-gap) /2) var(--float-gap) 
+    .w-richtext-align-center, .w-richtext-figure-type-image
+      padding 2rem 0 2rem 0
+      width 100%
+      margin 0 auto !important
+      text-align center
+    .w-richtext-align-floatleft, .w-richtext-align-floatright
+      margin-bottom 0
+      width 55%
+    .w-richtext-align-fullwidth
+      margin 0
+      padding 2rem 0;
+      >div
+        padding 0
 
 
 

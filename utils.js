@@ -118,11 +118,11 @@ export function splideAutoWidth(splide) {
       }
     }
     if (sliderReady) {
-      s2PlayInit()
+      splideInit()
     }
   })
-  splide.on('mounted', s2PlayInit)
-  function s2PlayInit() {
+  splide.on('mounted', splideInit)
+  function splideInit() {
     sliderReady = true
     if (!sliderOverflow) {
       splide.Components.AutoScroll.pause()
@@ -141,4 +141,20 @@ export function onDomReady(run) {
       run()
     })
   }
+}
+
+// Add an observer that checks if a class exists. If it does remove the observer and call a function
+export function addObserver(element, className, callback) {
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+        observer.disconnect()
+        callback()
+      }
+    })
+  })
+  observer.observe(element, {
+    attributes: true,
+    attributeFilter: ['class'],
+  })
 }
