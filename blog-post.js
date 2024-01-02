@@ -10,7 +10,7 @@ export default function BlogPost() {
   )
   figuresWithImg$a.forEach((el) => {
     const img = el.querySelector('img')
-    if (img.clientWidth > img.clientHeight) {
+    if (img.clientWidth / img.clientHeight > 1.5) {
       el.style.maxWidth = 'none'
     }
   })
