@@ -1,10 +1,20 @@
 import Splide from '@splidejs/splide'
-import { addSplideClasses, connectSplideArrows, onDomReady, sel } from './utils'
+import { addSplideClasses, connectSplideArrows, onDomReady, sel, selAll } from './utils'
 import gsap from 'gsap'
 import './blog.styl'
 import './blog-post.styl'
 
 export default function BlogPost() {
+  const figuresWithImg$a = selAll(
+    '.w-richtext-figure-type-image:not(.w-richtext-align-floatleft):not(.w-richtext-align-floatright):not(.w-richtext-align-center):has(img)'
+  )
+  figuresWithImg$a.forEach((el) => {
+    const img = el.querySelector('img')
+    if (img.clientWidth > img.clientHeight) {
+      el.style.maxWidth = 'none'
+    }
+  })
+
   function cardHover() {
     const cards = gsap.utils.toArray('.collection__item-blog-slider')
     console.log(cards)

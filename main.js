@@ -7,6 +7,7 @@ import Home from './home'
 import About from './about'
 import Blog from './blog'
 import Study from './study'
+import Test from './test'
 import BlogPost from './blog-post'
 import { sel, vh } from './utils'
 
@@ -56,6 +57,9 @@ switch (sel('.page-wrapper').getAttribute('data-page')) {
     break
   case 'services':
     // Services()
+    break
+  case 'test':
+    Test()
     break
   case 'error':
     error()
