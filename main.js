@@ -36,15 +36,31 @@ ScrollTrigger.create({
     gsap.to(navbarTl, { duration: 1.5, progress: direction === 1 ? 1 : 0, ease: 'expo.out' })
   },
 })
-onDomReady(() => {
-  scrollTriggerInit(160, 'contact__ape-1', 'contact__bg-wrap')
-  scrollTriggerInit(120, 'contact__ape-2', 'contact__bg-wrap')
-  scrollTriggerInit(300, 'contact__mountain-2', 'contact__bg-wrap')
-  scrollTriggerInit(200, 'contact__tree-1', 'contact__bg-wrap')
-  scrollTriggerInit(140, 'contact__tree-2', 'contact__bg-wrap')
-  scrollTriggerInit(100, 'contact__tree-3', 'contact__bg-wrap')
-  scrollTriggerInit(-100, 'contact__cont', 'contact__bg-wrap')
-})
+// contact form parallax
+if (sel('.contact-sec')) {
+  const scrollParams = [
+    [160, 'contact__ape-1', 'contact__bg-wrap'],
+    [120, 'contact__ape-2', 'contact__bg-wrap'],
+    [300, 'contact__mountain-2', 'contact__bg-wrap'],
+    [200, 'contact__tree-1', 'contact__bg-wrap'],
+    [140, 'contact__tree-2', 'contact__bg-wrap'],
+    [100, 'contact__tree-3', 'contact__bg-wrap'],
+    [-100, 'contact__cont', 'contact__bg-wrap'],
+  ]
+  let scrollItems = []
+  window.addEventListener('load', () => {
+    scrollParams.forEach((itemParam) => {
+      scrollItems.push(scrollTriggerInit(itemParam[0], itemParam[1], itemParam[2]))
+    })
+    // even after the load event body's height is being updated (images?)
+    const resizeObserver = new ResizeObserver(() => {
+      scrollItems.forEach((scrollItem) => {
+        scrollItem.refresh()
+      })
+    })
+    resizeObserver.observe(document.body)
+  })
+}
 
 switch (sel('.page-wrapper').getAttribute('data-page')) {
   case 'home':
