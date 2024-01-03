@@ -9,7 +9,7 @@ import Blog from './blog'
 import Study from './study'
 import Test from './test'
 import BlogPost from './blog-post'
-import { scrollTriggerInit, sel, vh } from './utils'
+import { onDomReady, scrollTriggerInit, sel, vh } from './utils'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -36,13 +36,15 @@ ScrollTrigger.create({
     gsap.to(navbarTl, { duration: 1.5, progress: direction === 1 ? 1 : 0, ease: 'expo.out' })
   },
 })
-scrollTriggerInit(160, 'contact__ape-1', 'contact__bg-wrap')
-scrollTriggerInit(120, 'contact__ape-2', 'contact__bg-wrap')
-scrollTriggerInit(300, 'contact__mountain-2', 'contact__bg-wrap')
-scrollTriggerInit(200, 'contact__tree-1', 'contact__bg-wrap')
-scrollTriggerInit(140, 'contact__tree-2', 'contact__bg-wrap')
-scrollTriggerInit(100, 'contact__tree-3', 'contact__bg-wrap')
-scrollTriggerInit(-100, 'contact__cont', 'contact__bg-wrap')
+onDomReady(() => {
+  scrollTriggerInit(160, 'contact__ape-1', 'contact__bg-wrap')
+  scrollTriggerInit(120, 'contact__ape-2', 'contact__bg-wrap')
+  scrollTriggerInit(300, 'contact__mountain-2', 'contact__bg-wrap')
+  scrollTriggerInit(200, 'contact__tree-1', 'contact__bg-wrap')
+  scrollTriggerInit(140, 'contact__tree-2', 'contact__bg-wrap')
+  scrollTriggerInit(100, 'contact__tree-3', 'contact__bg-wrap')
+  scrollTriggerInit(-100, 'contact__cont', 'contact__bg-wrap')
+})
 
 switch (sel('.page-wrapper').getAttribute('data-page')) {
   case 'home':
