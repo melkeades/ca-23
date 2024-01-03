@@ -1,6 +1,14 @@
-import { addSplideClasses, connectSplideArrows, onDomReady, sel, selAll } from './utils'
+import { addSplideClasses, connectSplideArrows, onDomReady, sel, selAll, scrollTriggerInit } from './utils'
+
 import './blog-post.styl'
 export default function Test() {
+  scrollTriggerInit(160, 'contact__ape-1', 'contact__bg-wrap')
+  scrollTriggerInit(120, 'contact__ape-2', 'contact__bg-wrap')
+  scrollTriggerInit(300, 'contact__mountain-2', 'contact__bg-wrap')
+  scrollTriggerInit(200, 'contact__tree-1', 'contact__bg-wrap')
+  scrollTriggerInit(140, 'contact__tree-2', 'contact__bg-wrap')
+  scrollTriggerInit(100, 'contact__tree-3', 'contact__bg-wrap')
+  scrollTriggerInit(-100, 'contact__cont', 'contact__bg-wrap')
   const figureWithImg$ = selAll(
     '.w-richtext-figure-type-image:not(.w-richtext-align-floatleft):not(.w-richtext-align-floatright):not(.w-richtext-align-center):has(img)'
   )

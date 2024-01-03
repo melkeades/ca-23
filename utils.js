@@ -158,3 +158,21 @@ export function addObserver(element, className, callback) {
     attributeFilter: ['class'],
   })
 }
+
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+export function scrollTriggerInit(distance = 0, elClassName = '', sectionClassName = '') {
+  // gsap.registerPlugin(ScrollTrigger)
+
+  sectionClassName = sectionClassName || elClassName
+  return ScrollTrigger.create({
+    animation: gsap.fromTo('.' + elClassName, { y: -distance }, { y: distance, ease: 'none' }),
+    trigger: '.' + sectionClassName,
+    start: 'top bottom',
+    end: 'bottom top',
+    // markers: true,
+    scrub: true,
+    delay: 0.0,
+  })
+}
