@@ -3,7 +3,7 @@ import Splide from '@splidejs/splide'
 import '@splidejs/splide/css'
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
 import { Intersection } from '@splidejs/splide-extension-intersection'
-import { sel, addSplideClasses, onDomReady, connectSplideArrows, connectSplideBullets, splideAutoWidth } from './utils'
+import { sel, addSplideClasses, onDomReady, connectSplideArrows, connectSplideBullets, splideAutoWidth, scrollTriggerInit } from './utils'
 
 // import ScrollTrigger from 'gsap/ScrollTrigger'
 export default function home() {
@@ -148,6 +148,8 @@ export default function home() {
     ourWorkSliderInit()
     animateDots()
     laptopImagePosition()
+
+    scrollTriggerInit(500, 'hero__img', 'home-hero')
     // cardHover()
   })
 }
