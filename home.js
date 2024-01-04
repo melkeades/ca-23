@@ -32,7 +32,7 @@ export default function home() {
       autoplay: 'pause',
       intersection: {
         inView: {
-          // autoplay: true,
+          autoplay: true,
         },
         outView: {
           autoplay: false,
