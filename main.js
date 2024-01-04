@@ -9,7 +9,7 @@ import Blog from './blog'
 import Study from './study'
 import Test from './test'
 import BlogPost from './blog-post'
-import { onDomReady, scrollTriggerInit, sel, vh } from './utils'
+import { debounce, onDomReady, scrollTriggerInit, sel, vh } from './utils'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -52,13 +52,18 @@ if (sel('.contact-sec')) {
     scrollParams.forEach((itemParam) => {
       scrollItems.push(scrollTriggerInit(itemParam[0], itemParam[1], itemParam[2]))
     })
-    // even after the load event body's height is being updated (images?)
-    const resizeObserver = new ResizeObserver(() => {
-      scrollItems.forEach((scrollItem) => {
-        scrollItem.refresh()
-      })
-    })
-    resizeObserver.observe(document.body)
+    // even after the load event body's height is being updated (lazy load?)
+    let documentHeight = document.body.clientHeight
+    new ResizeObserver((entries) => {
+      const newHeight = entries[0].contentRect.height // only one item [0] - body
+      if (newHeight !== documentHeight) {
+        documentHeight = newHeight
+        scrollItems.forEach((scrollItem) => {
+          scrollItem.refresh()
+          // console.log('upd')
+        })
+      }
+    }).observe(document.body)
   })
 }
 

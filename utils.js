@@ -3,11 +3,20 @@ export const selAll = (e) => document.querySelectorAll(e)
 export const vh = (percent) => window.innerHeight * (percent / 100)
 export const vw = (percent) => window.innerWidth * (percent / 100)
 
-export function debounce(func, time = 100) {
+// export function debounce(func, time = 100) {
+//   let timer = 0
+//   return function (event) {
+//     if (timer) clearTimeout(timer)
+//     timer = setTimeout(func, time, event)
+//   }
+// }
+export function debounce(func, timeout = 100) {
   let timer
-  return function (event) {
-    if (timer) clearTimeout(timer)
-    timer = setTimeout(func, time, event)
+  return (...args) => {
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      func.apply(this, args)
+    }, timeout)
   }
 }
 export function devMode(mode) {
@@ -162,7 +171,7 @@ export function addObserver(element, className, callback) {
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-export function scrollTriggerInit(distance = 0, elClassName = '', sectionClassName = '') {
+export function scrollTriggerInit(distance = 0, elClassName = '', sectionClassName = '', markers = false) {
   // gsap.registerPlugin(ScrollTrigger)
 
   sectionClassName = sectionClassName || elClassName
@@ -171,7 +180,7 @@ export function scrollTriggerInit(distance = 0, elClassName = '', sectionClassNa
     trigger: '.' + sectionClassName,
     start: 'top bottom',
     end: 'bottom top',
-    // markers: true,
+    markers: markers,
     scrub: true,
     delay: 0.0,
   })
