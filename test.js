@@ -50,7 +50,7 @@ export default function Test() {
   ourWorkInfoWrapper.style.setProperty('--swiper-wrapper-transition-timing-function', 'cubic-bezier(0.16, 1, 0.3, 1)')
   const ourWorkInfoSwiper = new Swiper('.our-work__info-slider', {
     modules: [Pagination, Controller, Autoplay],
-    loop: true,
+    loop: true, // either loop or snappy arrow click nav, not both
     // rewind: true,
     speed: 1500,
     spaceBetween: 48,
@@ -101,7 +101,6 @@ export default function Test() {
   // ourWorkInfoSwiper.start()
   // ourWorkInfoSwiper.on('slideNextTransitionStart', (event) => {
   // ourWorkInfoSwiper.on('slideChange', (event) => {
-  const tl = gsap.timeline({ defaults: { duration: 1, ease: 'power4.out' } })
   // only realIndexChange works reliably with controlled/synced sliders
 
   // selAll('.our-work__info-slider .swiper-slide:not(.swiper-slide-active)').forEach((slide) => {
@@ -122,7 +121,7 @@ export default function Test() {
     const next = e.wrapperEl.children.item(e.activeIndex)
     const right = e.activeIndex > e.previousIndex
     // console.log(right)
-    const tlIn = gsap.timeline({ defaults: { duration: 1.5, ease: 'power4.out' } }),
+    const tlIn = gsap.timeline({ defaults: { duration: 2.5, ease: 'power4.out' } }),
       tlOut = gsap.timeline({ defaults: { duration: 1.5, ease: 'power4.out' } })
     const prevH = prev.querySelector('.title')
 
@@ -143,10 +142,10 @@ export default function Test() {
       bx = 100
     const ht = 0.1,
       st = 0.0,
-      pt = 0.2,
+      pt = 0.3,
       b1t = 0.0,
       b2t = 0.1,
-      bt = 0.3
+      bt = 0.0
     // console.log(prevBtn1)
 
     tlOut
