@@ -60,7 +60,7 @@ if (sel('.contact-sec')) {
         documentHeight = newHeight
         scrollItems.forEach((scrollItem) => {
           scrollItem.refresh()
-          // console.log('upd')
+          console.log('upd')
         })
       }
     }).observe(document.body)
