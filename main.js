@@ -38,6 +38,8 @@ ScrollTrigger.create({
 })
 // contact form parallax
 if (sel('.contact-sec')) {
+  console.log('cont')
+
   const scrollParams = [
     [160, 'contact__ape-1', 'contact__bg-wrap'],
     [120, 'contact__ape-2', 'contact__bg-wrap'],
@@ -48,23 +50,25 @@ if (sel('.contact-sec')) {
     [-100, 'contact__cont', 'contact__bg-wrap'],
   ]
   let scrollItems = []
-  window.addEventListener('load', () => {
-    scrollParams.forEach((itemParam) => {
-      scrollItems.push(scrollTriggerInit(itemParam[0], itemParam[1], itemParam[2]))
-    })
-    // even after the load event body's height is being updated (lazy load?)
-    let documentHeight = document.body.clientHeight
-    new ResizeObserver((entries) => {
-      const newHeight = entries[0].contentRect.height // only one item [0] - body
-      if (newHeight !== documentHeight) {
-        documentHeight = newHeight
-        scrollItems.forEach((scrollItem) => {
-          scrollItem.refresh()
-          console.log('upd')
-        })
-      }
-    }).observe(document.body)
+  // window.addEventListener('load', () => {
+  scrollParams.forEach((itemParam) => {
+    scrollItems.push(scrollTriggerInit(itemParam[0], itemParam[1], itemParam[2]))
   })
+  // even after the load event body's height is being updated (lazy load?)
+  let documentHeight = document.body.clientHeight
+  new ResizeObserver((entries) => {
+    console.log('observer')
+
+    const newHeight = entries[0].contentRect.height // only one item [0] - body
+    if (newHeight !== documentHeight) {
+      documentHeight = newHeight
+      scrollItems.forEach((scrollItem) => {
+        scrollItem.refresh()
+        console.log('upd')
+      })
+    }
+  }).observe(document.body)
+  // })
 }
 
 switch (sel('.page-wrapper').getAttribute('data-page')) {
