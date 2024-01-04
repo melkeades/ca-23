@@ -2,7 +2,7 @@ import { addSplideClasses, connectSplideArrows, onDomReady, sel, selAll, scrollT
 
 import './blog-post.styl'
 import Swiper from 'swiper'
-import { Navigation, Pagination, Controller, EffectFade } from 'swiper/modules'
+import { Navigation, Pagination, Controller, EffectFade, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -40,7 +40,7 @@ export default function Test() {
   const ar = sel('.our-work__info-col .arrow:not(.arrow--left)')
   // ar?.style.opacity = '0.5'
   // console.log(ar)
-
+  const ourWorkSec$ = sel('.our-work-sec')
   const ourWorkImgSwiper = new Swiper('.our-work__img-slider', {
     modules: [Controller, EffectFade],
     effect: 'fade',
@@ -49,24 +49,56 @@ export default function Test() {
   const ourWorkInfoWrapper = sel('.our-work__info-slider>.swiper-wrapper')
   ourWorkInfoWrapper.style.setProperty('--swiper-wrapper-transition-timing-function', 'cubic-bezier(0.16, 1, 0.3, 1)')
   const ourWorkInfoSwiper = new Swiper('.our-work__info-slider', {
-    modules: [Navigation, Pagination, Controller],
+    modules: [Pagination, Controller, Autoplay],
     loop: true,
-    speed: 1000,
+    // rewind: true,
+    speed: 1500,
     spaceBetween: 48,
+    autoplay: {
+      delay: 4000,
+    },
     pagination: {
       clickable: true,
       bulletClass: 'bullet',
       bulletActiveClass: 'bullet--active',
       el: '.our-work__pagination',
     },
-    navigation: {
-      // nextEl: ar,
-      prevEl: '.our-work__info-col .arrow--left',
-      nextEl: '.our-work__info-col .arrow:not(.arrow--left)',
-    },
+    // navigation: {
+    //   prevEl: '.our-work__info-col .arrow--left',
+    //   nextEl: '.our-work__info-col .arrow:not(.arrow--left)',
+    // },
+  })
+  // ourWorkInfoSwiper.autoplay.pause()
+  sel('.our-work__info-col .arrow--left').addEventListener('click', (e) => {
+    // ourWorkInfoSwiper.setProgress(1, 0)
+    // if (ourWorkInfoSwiper.animating) {
+    //   console.log('press')
+    //   // ourWorkInfoSwiper.slideReset(10)
+    //   // ourWorkInfoSwiper.slideTo(ourWorkInfoSwiper.activeIndex - 1)
+    //   // ourWorkInfoSwiper.slideToClosest(10)
+    //   ourWorkInfoSwiper.slidePrev(10)
+    //   // ourWorkInfoSwiper.setProgress(0)
+    //   // ourWorkInfoSwiper.updateProgress()
+    // } else {
+    //   ourWorkInfoSwiper.slidePrev()
+    // }
+    // ourWorkInfoSwiper.updateProgress()
+    ourWorkInfoSwiper.slidePrev()
+  })
+  sel('.our-work__info-col .arrow:not(.arrow--left)').addEventListener('click', (e) => {
+    ourWorkInfoSwiper.slideNext()
+  })
+  ;[sel('.our-work__info-col'), sel('.our-work__img-col')].forEach((e) => {
+    e.addEventListener('mouseenter', () => {
+      ourWorkInfoSwiper.autoplay.stop()
+    })
+    e.addEventListener('mouseleave', () => {
+      ourWorkInfoSwiper.autoplay.start()
+    })
   })
   ourWorkInfoSwiper.controller.control = ourWorkImgSwiper
   ourWorkImgSwiper.controller.control = ourWorkInfoSwiper
+  // ourWorkInfoSwiper.start()
   // ourWorkInfoSwiper.on('slideNextTransitionStart', (event) => {
   // ourWorkInfoSwiper.on('slideChange', (event) => {
   const tl = gsap.timeline({ defaults: { duration: 1, ease: 'power4.out' } })
@@ -170,3 +202,4 @@ export default function Test() {
 // const callback = function () {
 //   console.log('The element or its child has the classes!')
 // }
+console.log('test')
