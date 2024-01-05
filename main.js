@@ -4,6 +4,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import Lenis from '@studio-freight/lenis'
 
 import Home from './home'
+import OurWork from './our-work'
 import About from './about'
 import Blog from './blog'
 import Study from './study'
@@ -40,15 +41,25 @@ ScrollTrigger.create({
 if (sel('.contact-sec')) {
   // console.log('cont')
 
+  // const scrollParams = [
+  //   [160, 'contact__ape-1'],
+  //   [120, 'contact__ape-2'],
+  //   [300, 'contact__mountain-2'],
+  //   [200, 'contact__tree-1'],
+  //   [140, 'contact__tree-2'],
+  //   [100, 'contact__tree-3'],
+  //   [-100, 'contact__cont'],
+  // ]
   const scrollParams = [
-    [160, 'contact__ape-1'],
-    [120, 'contact__ape-2'],
-    [300, 'contact__mountain-2'],
-    [200, 'contact__tree-1'],
-    [140, 'contact__tree-2'],
-    [100, 'contact__tree-3'],
-    [-100, 'contact__cont'],
+    ['5vh', 'contact__ape-1'],
+    ['20vh', 'contact__ape-2'],
+    ['60vh', 'contact__mountain-2'],
+    ['40vh', 'contact__tree-1'],
+    ['30vh', 'contact__tree-2'],
+    ['30vh', 'contact__tree-3'],
+    ['10vh', 'contact__cont'],
   ]
+
   let scrollItems = []
   // window.addEventListener('load', () => {
   scrollParams.forEach((itemParam) => {
@@ -76,6 +87,7 @@ switch (sel('.page-wrapper').getAttribute('data-page')) {
     Home()
     break
   case 'our-work':
+    OurWork()
     break
   case 'study':
     Study()

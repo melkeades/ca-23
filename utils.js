@@ -172,9 +172,15 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export function scrollTriggerInit(distance = 0, elClassName = '', sectionClassName = '', type = 'fromTo', position = 'middle', markers = false) {
+  // negative distance = front object (faster on scroll), positive distance = back object (slower on scroll/more sticky)
   const tl = gsap.timeline({ defaults: { ease: 'none' } })
   if (type === 'fromTo') {
-    tl.fromTo('.' + elClassName, { y: -1 * distance }, { y: distance })
+    let fromDistance = -distance,
+      toDistance = distance
+    // remove the minus sign in a string for fromDistance
+    if (typeof distance === 'string' && distance.charAt(0) === '-') fromDistance = distance.substring(1)
+
+    tl.fromTo('.' + elClassName, { y: fromDistance }, { y: toDistance })
   } else if (type === 'to') {
     tl.to('.' + elClassName, { y: distance })
     console.log('to')
@@ -200,4 +206,13 @@ export function scrollTriggerInit(distance = 0, elClassName = '', sectionClassNa
     scrub: true,
     delay: 0.0,
   })
+}
+
+export function addSwiperClasses(slider) {
+  const swiper = document.querySelector('.' + slider)
+  const list = swiper.children[0]
+  const slide = list.childNodes
+  swiper.classList.add('swiper')
+  list.classList.add('swiper-wrapper')
+  slide.forEach((slide) => slide.classList.add('swiper-slide'))
 }
