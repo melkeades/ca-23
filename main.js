@@ -30,7 +30,7 @@ const navbarTl = gsap.to(navbarSticky$, {
 })
 ScrollTrigger.create({
   trigger: 'body',
-  start: vh(100) + ' top',
+  start: vh(160) + ' top',
   onToggle({ direction, getVelocity }) {
     // to reverse the easing
     gsap.to(navbarTl, { duration: 1.5, progress: direction === 1 ? 1 : 0, ease: 'expo.out' })

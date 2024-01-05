@@ -171,15 +171,29 @@ export function addObserver(element, className, callback) {
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-export function scrollTriggerInit(distance = 0, elClassName = '', sectionClassName = '', markers = false) {
-  // gsap.registerPlugin(ScrollTrigger)
+export function scrollTriggerInit(distance = 0, elClassName = '', sectionClassName = '', type = 'fromTo', position = 'middle', markers = false) {
+  let tl = gsap.timeline({ defaults: { ease: 'none' } })
+  if (type === 'fromTo') {
+    tl.fromTo('.' + elClassName, { y: -1 * distance }, { y: distance })
+  } else if (type === 'to') {
+    tl.to('.' + elClassName, { y: distance })
+  } else {
+    to.from('.' + elClassName, { y: distance })
+  }
+  let start = 'top bottom'
+  let end = 'bottom top'
+  if (position === 'top') {
+    start = 'top top'
+  } else if (position === 'bottom') {
+    end = 'bottom bottom'
+  }
 
   sectionClassName = sectionClassName || elClassName
   return ScrollTrigger.create({
-    animation: gsap.fromTo('.' + elClassName, { y: -distance }, { y: distance, ease: 'none' }),
+    animation: tl,
     trigger: '.' + sectionClassName,
-    start: 'top bottom',
-    end: 'bottom top',
+    start: start,
+    end: end,
     markers: markers,
     scrub: true,
     delay: 0.0,

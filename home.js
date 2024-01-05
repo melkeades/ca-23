@@ -149,7 +149,19 @@ export default function home() {
     animateDots()
     laptopImagePosition()
 
-    scrollTriggerInit(500, 'hero__img', 'home-hero')
+    scrollTriggerInit(500, 'hero__img', 'home-hero', 'to', 'top')
     // cardHover()
+    gsap.matchMedia().add(
+      {
+        isDesktop: '(min-width: 991px)',
+      },
+      (context) => {
+        let { isDesktop } = context.conditions
+        if (isDesktop) {
+          scrollTriggerInit(-150, 'our-work__img-slider', 'our-work-sec')
+        }
+        return () => {}
+      }
+    )
   })
 }
