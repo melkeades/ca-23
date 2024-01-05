@@ -172,14 +172,16 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export function scrollTriggerInit(distance = 0, elClassName = '', sectionClassName = '', type = 'fromTo', position = 'middle', markers = false) {
-  let tl = gsap.timeline({ defaults: { ease: 'none' } })
+  const tl = gsap.timeline({ defaults: { ease: 'none' } })
   if (type === 'fromTo') {
     tl.fromTo('.' + elClassName, { y: -1 * distance }, { y: distance })
   } else if (type === 'to') {
     tl.to('.' + elClassName, { y: distance })
-  } else {
+    console.log('to')
+  } else if (type === 'from') {
     to.from('.' + elClassName, { y: distance })
   }
+
   let start = 'top bottom'
   let end = 'bottom top'
   if (position === 'top') {
