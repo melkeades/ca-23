@@ -31,9 +31,9 @@ export default function OurWork() {
       effect: 'fade',
       speed: 1,
       // spaceBetween: 48,
-      // autoplay: {
-      //   delay: 4000,
-      // },
+      autoplay: {
+        delay: 4000,
+      },
       pagination: {
         clickable: true,
         bulletClass: 'bullet',
