@@ -171,28 +171,33 @@ export function addObserver(element, className, callback) {
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-export function scrollTriggerInit(distance = 0, elClassName = '', sectionClassName = '', type = 'fromTo', position = 'middle', markers = false) {
+export function scrollTriggerInit(distance = 0, elClassName = '', sectionClassName = '', type = '', position = '', markers = false) {
+  const tlType = type === '' ? 'fromTo' : type
+  const stPosition = position === '' ? 'middle' : position
   // negative distance = front object (faster on scroll), positive distance = back object (slower on scroll/more sticky)
   const tl = gsap.timeline({ defaults: { ease: 'none' } })
-  if (type === 'fromTo') {
+  if (tlType === 'fromTo') {
+    console.log('fromTo')
+
     let fromDistance = -distance,
       toDistance = distance
     // remove the minus sign in a string for fromDistance
     if (typeof distance === 'string' && distance.charAt(0) === '-') fromDistance = distance.substring(1)
 
     tl.fromTo('.' + elClassName, { y: fromDistance }, { y: toDistance })
-  } else if (type === 'to') {
+  } else if (tlType === 'to') {
     tl.to('.' + elClassName, { y: distance })
     console.log('to')
-  } else if (type === 'from') {
-    to.from('.' + elClassName, { y: distance })
+  } else if (tlType === 'from') {
+    console.log('from')
+    tl.from('.' + elClassName, { y: distance })
   }
 
   let start = 'top bottom'
   let end = 'bottom top'
-  if (position === 'top') {
+  if (stPosition === 'top') {
     start = 'top top'
-  } else if (position === 'bottom') {
+  } else if (stPosition === 'bottom') {
     end = 'bottom bottom'
   }
 

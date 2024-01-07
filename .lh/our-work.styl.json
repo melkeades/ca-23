@@ -1,0 +1,278 @@
+{
+    "sourceFile": "our-work.styl",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 65,
+            "patches": [
+                {
+                    "date": 1704496755168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704496765981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,3 @@\n+\r\n+.swiper_wrapper\r\n+    overflow: visible;\r\n"
+                },
+                {
+                    "date": 1704496776264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,3 @@\n+\r\n+.swiper_wrapper\r\n+    overflow: visible !important;\r\n"
+                },
+                {
+                    "date": 1704496798629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,3 @@\n+\r\n+.siper, .swiper_wrapper\r\n+    overflow: visible !important;\r\n"
+                },
+                {
+                    "date": 1704496806352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,3 @@\n+\r\n+.siper, .swiper_wrapper, .swiper_slide\r\n+    overflow: visible !important;\r\n"
+                },
+                {
+                    "date": 1704496827327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,4 @@\n+\r\n+.siper, .swiper_wrapper, .swiper_slide\r\n+    overflow: visible !important;\r\n+    position static\r\n"
+                },
+                {
+                    "date": 1704496877443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,4 @@\n+\r\n+.siper, .swiper_wrapper, .swiper_slide\r\n+    overflow: visible !important;\r\n+    position initial;\r\n"
+                },
+                {
+                    "date": 1704496884851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,4 @@\n+\r\n+.siper, .swiper_wrapper, .swiper_slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n"
+                },
+                {
+                    "date": 1704496897443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,4 @@\n+\r\n+.swiper, .swiper_wrapper, .swiper_slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n"
+                },
+                {
+                    "date": 1704496906537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+\r\n+.swiper, .swiper_wrapper, .swiper_slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n+    opacity .5\r\n"
+                },
+                {
+                    "date": 1704496965812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,4 @@\n+\r\n+.swiper, .swiper_wrapper, .swiper_slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n"
+                },
+                {
+                    "date": 1704497383025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+\r\n+.swiper, .swiper_wrapper, .swiper_slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n+\r\n+body\r\n+    overflow hidden\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704497389913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+\r\n+.swiper, .swiper_wrapper, .swiper_slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n+\r\n+body\r\n+    overflow   hidden !important;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704497398619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+\r\n+.swiper, .swiper_wrapper, .swiper_slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n+\r\n+body\r\n+    overflow  hidden !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704497412817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+\r\n+.swiper, .swiper_wrapper, .swiper_slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n+\r\n+body, html\r\n+    overflow  hidden !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704497440441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+\r\n+.swiper, .swiper_wrapper, .swiper_slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n+\r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704498068407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+\r\n+.swiper, .swiper_wrapper, .swiper_slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n+.swiper_slide\r\n+    opacity .5\r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704498076572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+\r\n+.swiper, .swiper_wrapper, .swiper_slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n+.swiper_slide\r\n+    opacity .5\r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704498107002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+\r\n+.swiper, .swiper_wrapper, .swiper_slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n+.swiper-slide    \r\n+    opacity .5 !important;\r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704498113660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+\r\n+.swiper, .swiper_wrapper, .swiper_slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n+.swiper-slide    \r\n+    opacity .5 !important;\r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704498123328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+.swiper, .swiper-wrapper, .swiper-slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704498143508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+\r\n+.swiper, .swiper-wrapper, .swiper-slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n+ .swiper-wrapper\r\n+    opacity .5   \r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704498153817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+\r\n+.swiper, .swiper-wrapper, .swiper-slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n+ .swiper\r\n+    opacity .5   \r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704498162668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+\r\n+.swiper, .swiper-wrapper, .swiper-slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n+ .swiper-wrapper\r\n+    opacity .5   \r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704498167812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+\r\n+.swiper, .swiper-wrapper, .swiper-slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n+ .swiper-slide\r\n+    opacity .5   \r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704498182676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+.swiper, .swiper-wrapper, .swiper-slide\r\n+    overflow: visible !important;\r\n+    position unset !important;\r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704498190647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+.swiper, .swiper-wrapper, .swiper-slide\r\n+    overflow: visible !important;\r\n+    position inherit !important;\r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704498243807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+.swiper, .swiper-wrapper, .swiper-slide\r\n+    overflow: visible !important;\r\n+    position unset !important;\r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704498251063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+.swiper, .swiper-wrapper, .swiper-slide\r\n+    overflow: visible !important;\r\n+    position static !important;\r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704498639886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+.swiper, .swiper-wrapper, .swiper-slide\r\n+    overflow: visible !important;\r\n+    position absolute !important;\r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499493189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+// .swiper, .swiper-wrapper, .swiper-slide\r\n+//     overflow: visible !important;\r\n+//     position absolute !important;\r\n+// body, html\r\n+//     overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499576832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n \r\n-// .swiper, .swiper-wrapper, .swiper-slide\r\n-//     overflow: visible !important;\r\n-//     position absolute !important;\r\n-// body, html\r\n-//     overflow  visible !important\n\\ No newline at end of file\n+.swiper, .swiper-wrapper, .swiper-slide\r\n+    overflow: visible !important;\r\n+    position absolute !important;\r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499624340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+.swiper, .swiper-wrapper, .swiper-slide\r\n+    overflow: visible !important;\r\n+    position absolute !important;\r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499698664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n \r\n-.swiper, .swiper-wrapper, .swiper-slide\r\n-    overflow: visible !important;\r\n-    position absolute !important;\r\n+// .swiper, .swiper-wrapper, .swiper-slide\r\n+//     overflow: visible !important;\r\n+//     position absolute !important;\r\n body, html\r\n     overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499709731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+\r\n+// .swiper, .swiper-wrapper, .swiper-slide\r\n+//     overflow: visible !important;\r\n+.swiper\r\n+    width 100%\r\n+//     position absolute !important;\r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499717283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,9 @@\n+\r\n+// .swiper, .swiper-wrapper, .swiper-slide\r\n+//     overflow: visible !important;\r\n+.swiper\r\n+    width 100%\r\n+    height 100% !important\r\n+//     position absolute !important;\r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499737192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,9 @@\n+\r\n+.swiper, .swiper-wrapper, .swiper-slide\r\n+    overflow: visible !important;\r\n+.swiper\r\n+    width 100% !important\r\n+    height 100% !important\r\n+//     position absolute !important;\r\n+body, html\r\n+    overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499749700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,6 @@\n .swiper\r\n     width 100% !important\r\n     height 100% !important\r\n //     position absolute !important;\r\n-body, html\r\n-    overflow  visible !important\n\\ No newline at end of file\n+// body, html\r\n+//     overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499758104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,213 +1,9 @@\n \r\n .swiper, .swiper-wrapper, .swiper-slide\r\n     overflow: visible !important;\r\n-.swiper\r\n-    width 100% !important\r\n-    height 100% !important\r\n+// .swiper\r\n+//     width 100% !important\r\n+//     height 100% !important\r\n //     position absolute !important;\r\n // body, html\r\n-//     overflow  visible !important\n-\r\n-// .swiper, .swiper-wrapper, .swiper-slide\r\n-//     overflow: visible !important;\r\n-.swiper\r\n-    width 100%\r\n-    height 100% !important\r\n-//     position absolute !important;\r\n-body, html\r\n-    overflow  visible !important\n-\r\n-// .swiper, .swiper-wrapper, .swiper-slide\r\n-//     overflow: visible !important;\r\n-.swiper\r\n-    width 100%\r\n-//     position absolute !important;\r\n-body, html\r\n-    overflow  visible !important\n-\r\n-// .swiper, .swiper-wrapper, .swiper-slide\r\n-//     overflow: visible !important;\r\n-//     position absolute !important;\r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper, .swiper-slide\r\n-    overflow: visible !important;\r\n-    position absolute !important;\r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper, .swiper-slide\r\n-    overflow: visible !important;\r\n-    position absolute !important;\r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper, .swiper-slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper, .swiper-slide\r\n-    overflow: visible !important;\r\n-    position unset !important;\r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper, .swiper-slide\r\n-    overflow: visible !important;\r\n-    position inherit !important;\r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper, .swiper-slide\r\n-    overflow: visible !important;\r\n-    position unset !important;\r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper, .swiper-slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n- .swiper-slide\r\n-    opacity .5   \r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper, .swiper-slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n- .swiper-wrapper\r\n-    opacity .5   \r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper, .swiper-slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n- .swiper\r\n-    opacity .5   \r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper, .swiper-slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n- .swiper-wrapper\r\n-    opacity .5   \r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper, .swiper-slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper_wrapper, .swiper_slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n-.swiper-slide    \r\n-    opacity .5 !important;\r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper_wrapper, .swiper_slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n-.swiper-slide    \r\n-    opacity .5 !important;\r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper_wrapper, .swiper_slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n-.swiper_slide\r\n-    opacity .5\r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper_wrapper, .swiper_slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n-.swiper_slide\r\n-    opacity .5\r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper_wrapper, .swiper_slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n-\r\n-body, html\r\n-    overflow  visible !important\n-\r\n-.swiper, .swiper_wrapper, .swiper_slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n-\r\n-body, html\r\n-    overflow  hidden !important\n-\r\n-.swiper, .swiper_wrapper, .swiper_slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n-\r\n-body\r\n-    overflow  hidden !important\n-\r\n-.swiper, .swiper_wrapper, .swiper_slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n-\r\n-body\r\n-    overflow   hidden !important;\n-\r\n-.swiper, .swiper_wrapper, .swiper_slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n-\r\n-body\r\n-    overflow hidden\n-\r\n-.swiper, .swiper_wrapper, .swiper_slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n-\r\n-.swiper, .swiper_wrapper, .swiper_slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n-    opacity .5\r\n-\r\n-.swiper, .swiper_wrapper, .swiper_slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n-\r\n-.siper, .swiper_wrapper, .swiper_slide\r\n-    overflow: visible !important;\r\n-    position static !important;\r\n-\r\n-.siper, .swiper_wrapper, .swiper_slide\r\n-    overflow: visible !important;\r\n-    position initial;\r\n-\r\n-.siper, .swiper_wrapper, .swiper_slide\r\n-    overflow: visible !important;\r\n-    position static\r\n-\r\n-.siper, .swiper_wrapper, .swiper_slide\r\n-    overflow: visible !important;\r\n-\r\n-.siper, .swiper_wrapper\r\n-    overflow: visible !important;\r\n-\r\n-.swiper_wrapper\r\n-    overflow: visible !important;\r\n-\r\n-.swiper_wrapper\r\n-    overflow: visible;\r\n\\ No newline at end of file\n-\r\n-swiper_wrapper\r\n-    overflow: visible;\n+//     overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499836330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+\r\n+.swiper, .swiper-wrapper, .swiper-slide\r\n+    // overflow: visible !important;\r\n+    width 100%\r\n+    height 100%\r\n+// .swiper\r\n+//     width 100% !important\r\n+//     height 100% !important\r\n+//     position absolute !important;\r\n+// body, html\r\n+//     overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499850634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+\r\n+.swiper, .swiper-wrapper\r\n+    // overflow: visible !important;\r\n+    width 100%\r\n+    height 100%\r\n+// .swiper\r\n+//     width 100% !important\r\n+//     height 100% !important\r\n+//     position absolute !important;\r\n+// body, html\r\n+//     overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499878104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+\r\n+.swiper, .swiper-wrapper\r\n+    // overflow: visible !important;\r\n+    width 100% !important\r\n+    height 100%\r\n+// .swiper\r\n+//     width 100% !important\r\n+//     height 100% !important\r\n+//     position absolute !important;\r\n+// body, html\r\n+//     overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499889974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,12 @@\n+\r\n+.swiper, .swiper-wrapper\r\n+    // overflow: visible !important;\r\n+    width 100% !important\r\n+    height 100% !important\r\n+    overflow visible !important\r\n+// .swiper\r\n+//     width 100% !important\r\n+//     height 100% !important\r\n+//     position absolute !important;\r\n+// body, html\r\n+//     overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499896437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+\r\n+.swiper, .swiper-wrapper\r\n+    // overflow: visible !important;\r\n+    width 100% !important\r\n+    height 100% !important\r\n+    overflow visible !important\r\n+    position absolute\r\n+// .swiper\r\n+//     width 100% !important\r\n+//     height 100% !important\r\n+//     position absolute !important;\r\n+// body, html\r\n+//     overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499901530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+\r\n+.swiper, .swiper-wrapper\r\n+    // overflow: visible !important;\r\n+    width 100% !important\r\n+    height 100% !important\r\n+    overflow visible !important\r\n+    // position absolute !important\r\n+// .swiper\r\n+//     width 100% !important\r\n+//     height 100% !important\r\n+//     position absolute !important;\r\n+// body, html\r\n+//     overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499908890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     // overflow: visible !important;\r\n     width 100% !important\r\n     height 100% !important\r\n     overflow visible !important\r\n-    // position absolute !important\r\n+    position absolute !important\r\n // .swiper\r\n //     width 100% !important\r\n //     height 100% !important\r\n //     position absolute !important;\r\n"
+                },
+                {
+                    "date": 1704499916238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     // overflow: visible !important;\r\n     width 100% !important\r\n     height 100% !important\r\n     overflow visible !important\r\n-    position absolute !important\r\n+    // position absolute !important\r\n // .swiper\r\n //     width 100% !important\r\n //     height 100% !important\r\n //     position absolute !important;\r\n"
+                },
+                {
+                    "date": 1704499927519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+\r\n+.swiper, .swiper-wrapper\r\n+    // overflow: visible !important;\r\n+    width 100% !important\r\n+    height 100% !important\r\n+    overflow visible !important\r\n+    position absolute !important\r\n+// .swiper\r\n+//     width 100% !important\r\n+//     height 100% !important\r\n+//     position absolute !important;\r\n+// body, html\r\n+//     overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499933507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,93 +1,13 @@\n \r\n .swiper, .swiper-wrapper\r\n     // overflow: visible !important;\r\n     width 100% !important\r\n-    height 100% !important\r\n-    overflow visible !important\r\n+    // height 100% !important\r\n+    // overflow visible !important\r\n     position absolute !important\r\n // .swiper\r\n //     width 100% !important\r\n //     height 100% !important\r\n //     position absolute !important;\r\n // body, html\r\n-//     overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper\r\n-    // overflow: visible !important;\r\n-    width 100% !important\r\n-    height 100% !important\r\n-    overflow visible !important\r\n-    // position absolute !important\r\n-// .swiper\r\n-//     width 100% !important\r\n-//     height 100% !important\r\n-//     position absolute !important;\r\n-// body, html\r\n-//     overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper\r\n-    // overflow: visible !important;\r\n-    width 100% !important\r\n-    height 100% !important\r\n-    overflow visible !important\r\n-    position absolute\r\n-// .swiper\r\n-//     width 100% !important\r\n-//     height 100% !important\r\n-//     position absolute !important;\r\n-// body, html\r\n-//     overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper\r\n-    // overflow: visible !important;\r\n-    width 100% !important\r\n-    height 100% !important\r\n-    overflow visible !important\r\n-// .swiper\r\n-//     width 100% !important\r\n-//     height 100% !important\r\n-//     position absolute !important;\r\n-// body, html\r\n-//     overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper\r\n-    // overflow: visible !important;\r\n-    width 100% !important\r\n-    height 100%\r\n-// .swiper\r\n-//     width 100% !important\r\n-//     height 100% !important\r\n-//     position absolute !important;\r\n-// body, html\r\n-//     overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper\r\n-    // overflow: visible !important;\r\n-    width 100%\r\n-    height 100%\r\n-// .swiper\r\n-//     width 100% !important\r\n-//     height 100% !important\r\n-//     position absolute !important;\r\n-// body, html\r\n-//     overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper, .swiper-slide\r\n-    // overflow: visible !important;\r\n-    width 100%\r\n-    height 100%\r\n-// .swiper\r\n-//     width 100% !important\r\n-//     height 100% !important\r\n-//     position absolute !important;\r\n-// body, html\r\n-//     overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper, .swiper-slide\r\n-    overflow: visible !important;\r\n-// .swiper\r\n-//     width 100% !important\r\n-//     height 100% !important\r\n-//     position absolute !important;\r\n-// body, html\r\n //     overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499940569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+\r\n+.swiper, .swiper-wrapper\r\n+    // overflow: visible !important;\r\n+    // width 100% !important\r\n+    height 100% !important\r\n+    // overflow visible !important\r\n+    position absolute !important\r\n+// .swiper\r\n+//     width 100% !important\r\n+//     height 100% !important\r\n+//     position absolute !important;\r\n+// body, html\r\n+//     overflow  visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704499955513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+\r\n+.swiper, .swiper-wrapper\r\n+    width 100% !important\r\n+    height 100% !important\r\n+    position absolute !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704506901225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+\r\n+.swiper, .swiper-wrapper\r\n+    width 100% !important\r\n+    height 100% !important\r\n+    position absolute !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704508542702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+\r\n+// .swiper, .swiper-wrapper\r\n+//     width 100% !important\r\n+//     height 100% !important\r\n+//     position absolute !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704508554657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+\r\n+.swiper, .swiper-wrapper\r\n+    width 100% !important\r\n+    height 100% !important\r\n+    position absolute !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704508563617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,46 +1,5 @@\n \r\n .swiper, .swiper-wrapper\r\n-    width 100% !important\r\n-    height 100% !important\r\n-    position absolute !important\n-\r\n-// .swiper, .swiper-wrapper\r\n-//     width 100% !important\r\n-//     height 100% !important\r\n-//     position absolute !important\n-\r\n-.swiper, .swiper-wrapper\r\n-    width 100% !important\r\n-    height 100% !important\r\n-    position absolute !important\n-\r\n-.swiper, .swiper-wrapper\r\n-    width 100% !important\r\n-    height 100% !important\r\n-    position absolute !important\n-\r\n-.swiper, .swiper-wrapper\r\n-    // overflow: visible !important;\r\n     // width 100% !important\r\n-    height 100% !important\r\n-    // overflow visible !important\r\n-    position absolute !important\r\n-// .swiper\r\n-//     width 100% !important\r\n-//     height 100% !important\r\n-//     position absolute !important;\r\n-// body, html\r\n-//     overflow  visible !important\n-\r\n-.swiper, .swiper-wrapper\r\n-    // overflow: visible !important;\r\n-    width 100% !important\r\n     // height 100% !important\r\n-    // overflow visible !important\r\n-    position absolute !important\r\n-// .swiper\r\n-//     width 100% !important\r\n-//     height 100% !important\r\n-//     position absolute !important;\r\n-// body, html\r\n-//     overflow  visible !important\n\\ No newline at end of file\n+    position absolute !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704508571455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+\r\n+.swiper, .swiper-wrapper\r\n+    width 100% !important\r\n+    // height 100% !important\r\n+    position absolute !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704508577662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+\r\n+.swiper, .swiper-wrapper\r\n+    // width 100% !important\r\n+    height 100% !important\r\n+    position absolute !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704508584566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+\r\n+.swiper, .swiper-wrapper\r\n+    width 100% !important\r\n+    height 100% !important\r\n+    position absolute !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704509156016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+.our-work-hero\r\n+    .swiper, .swiper-wrapper\r\n+        width 100% !important\r\n+        height 100% !important\r\n+        position absolute !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704509418655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+.our-work-hero\r\n+    .swiper, .swiper-wrapper\r\n+        width 100% !important\r\n+        height 100% !important\r\n+        position relative !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704509435197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+\r\n+.our-work-hero\r\n+    .swiper, .swiper-wrapper\r\n+        width 100% !important\r\n+        height 100% !important\r\n+        position relative !important\r\n+        overflow: visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704509440303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+\r\n+.our-work-hero\r\n+    .swiper, .swiper-wrapper\r\n+        width 100% !important\r\n+        height 100% !important\r\n+        position relative !important\r\n+        overflow: visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704509454207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,7 @@\n+\r\n+.our-work-hero\r\n+    .swiper, .swiper-wrapper, .swiper-slider\r\n+        width 100% !important\r\n+        height 100% !important\r\n+        position relative !important\r\n+        overflow: visible !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704509495600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+.our-work-hero\r\n+    .swiper, .swiper-wrapper\r\n+        width 100% !important\r\n+        height 100% !important\r\n+        // position absolute !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704509514509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+.our-work-hero\r\n+    .swiper, .swiper-wrapper\r\n+        width 100% !important\r\n+        height 100% !important\r\n+        position absolute !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704509896608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+.our-work-hero\r\n+    .swiper, .swiper-wrapper\r\n+        width 100% !important\r\n+        height 100% !important\r\n+        position absolute !important\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1704496755168,
+            "name": "Commit-0",
+            "content": "\r\nswiper_wrapper\r\n    overflow: visible;"
+        }
+    ]
+}

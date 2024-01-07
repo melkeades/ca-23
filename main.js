@@ -57,13 +57,14 @@ if (sel('.contact-sec')) {
     ['40vh', 'contact__tree-1'],
     ['30vh', 'contact__tree-2'],
     ['30vh', 'contact__tree-3'],
-    ['10vh', 'contact__cont'],
+    ['-20vh', 'contact__cont', '', ''],
   ]
 
   let scrollItems = []
   // window.addEventListener('load', () => {
   scrollParams.forEach((itemParam) => {
-    scrollItems.push(scrollTriggerInit(itemParam[0], itemParam[1], 'contact__bg-wrap', 'to'))
+    const type = itemParam[3] || 'to'
+    scrollItems.push(scrollTriggerInit(itemParam[0], itemParam[1], 'contact__bg-wrap', itemParam[3]))
   })
   // even after the load event body's height is being updated (lazy load?)
   let documentHeight = document.body.clientHeight
