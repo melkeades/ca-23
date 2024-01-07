@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 65,
+            "activePatchIndex": 67,
             "patches": [
                 {
                     "date": 1704496755168,
@@ -268,6 +268,14 @@
                 {
                     "date": 1704509896608,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+\r\n+.our-work-hero\r\n+    .swiper, .swiper-wrapper\r\n+        width 100% !important\r\n+        height 100% !important\r\n+        position absolute !important\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704644799961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,71 +1,20 @@\n \r\n-.our-work-hero\r\n-    .swiper, .swiper-wrapper\r\n-        width 100% !important\r\n-        height 100% !important\r\n-        position absolute !important\n-\r\n-.our-work-hero\r\n-    .swiper, .swiper-wrapper\r\n-        width 100% !important\r\n-        height 100% !important\r\n-        position absolute !important\n-\r\n-.our-work-hero\r\n-    .swiper, .swiper-wrapper\r\n-        width 100% !important\r\n-        height 100% !important\r\n-        // position absolute !important\n-\r\n-.our-work-hero\r\n-    .swiper, .swiper-wrapper, .swiper-slider\r\n-        width 100% !important\r\n-        height 100% !important\r\n-        position relative !important\r\n-        overflow: visible !important\n-\r\n-.our-work-hero\r\n-    .swiper, .swiper-wrapper\r\n-        width 100% !important\r\n-        height 100% !important\r\n-        position relative !important\r\n-        overflow: visible !important\n-\r\n-.our-work-hero\r\n-    .swiper, .swiper-wrapper\r\n-        width 100% !important\r\n-        height 100% !important\r\n-        position relative !important\r\n-        overflow: visible !important\n-\r\n-.our-work-hero\r\n-    .swiper, .swiper-wrapper\r\n-        width 100% !important\r\n-        height 100% !important\r\n-        position relative !important\n-\r\n-.our-work-hero\r\n-    .swiper, .swiper-wrapper\r\n-        width 100% !important\r\n-        height 100% !important\r\n-        position absolute !important\n-\r\n-.swiper, .swiper-wrapper\r\n-    width 100% !important\r\n-    height 100% !important\r\n-    position absolute !important\n-\r\n-.swiper, .swiper-wrapper\r\n-    // width 100% !important\r\n-    height 100% !important\r\n-    position absolute !important\n-\r\n-.swiper, .swiper-wrapper\r\n-    width 100% !important\r\n-    // height 100% !important\r\n-    position absolute !important\n-\r\n-.swiper, .swiper-wrapper\r\n-    // width 100% !important\r\n-    // height 100% !important\r\n-    position absolute !important\n\\ No newline at end of file\n+// .our-work-hero\r\n+//     .swiper, .swiper-wrapper\r\n+//         width 100% !important\r\n+//         height 100% !important\r\n+//         position absolute !important\r\n+.our-work-hero__info-slider\r\n+    margin: 0 !important\r\n+    overflow visible\r\n+.our-work-hero__dot-wrap\r\n+    width auto !important\r\n+.our-work-hero__img-slider, .our-work-hero__img-list, .our-work-hero__img-item \r\n+    // position static !important\r\n+    // overflow: visible !important\r\n+    // transform:  none !important\r\n+    .swiper-slide\r\n+        // min-height: 100% !important\r\n+        // flex-basis: 100% !important\r\n+        // flex-shrink: 0 !important\r\n+        // opacity .5\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704644825205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n //         height 100% !important\r\n //         position absolute !important\r\n .our-work-hero__info-slider\r\n     margin: 0 !important\r\n-    overflow visible\r\n+    overflow visible !important\r\n .our-work-hero__dot-wrap\r\n     width auto !important\r\n .our-work-hero__img-slider, .our-work-hero__img-list, .our-work-hero__img-item \r\n     // position static !important\r\n"
                 }
             ],
             "date": 1704496755168,
