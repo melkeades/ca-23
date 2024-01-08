@@ -34,6 +34,8 @@ export default function OurWork() {
       // autoplay: {
       //   delay: 4000,
       // },
+      allowTouchMove: false,
+
       pagination: {
         clickable: true,
         bulletClass: 'bullet',
