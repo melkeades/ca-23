@@ -30,10 +30,9 @@ export default function OurWork() {
       loop: true,
       effect: 'fade',
       speed: 1,
-      // spaceBetween: 48,
-      // autoplay: {
-      //   delay: 4000,
-      // },
+      autoplay: {
+        delay: 4000,
+      },
 
       allowTouchMove: false,
       pagination: {
@@ -49,11 +48,11 @@ export default function OurWork() {
     })
     const ht = new Hammer(sel('.our-work-hero'))
     ht.on('swipeleft', (e) => {
-      ourWorkInfoSwiper.slidePrev()
+      ourWorkInfoSwiper.slideNext()
     })
 
     ht.on('swiperight', (e) => {
-      ourWorkInfoSwiper.slideNext()
+      ourWorkInfoSwiper.slidePrev()
     })
 
     ourWorkInfoSwiper.controller.control = ourWorkImgSwiper
