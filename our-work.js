@@ -21,7 +21,7 @@ export default function OurWork() {
       // slidesPerView: 1,
       effect: 'fade',
       loop: true,
-      // speed: 1000,
+      speed: 1,
     })
 
     const ourWorkInfoSwiper = new Swiper('.our-work-hero__info-slider', {
@@ -31,9 +31,9 @@ export default function OurWork() {
       effect: 'fade',
       speed: 1,
       // spaceBetween: 48,
-      autoplay: {
-        delay: 4000,
-      },
+      // autoplay: {
+      //   delay: 4000,
+      // },
       pagination: {
         clickable: true,
         bulletClass: 'bullet',

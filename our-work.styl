@@ -15,8 +15,32 @@
     // position static !important
     // overflow: visible !important
     // transform:  none !important
+    z-index: auto !important
+    position static !important
+
+    // transform:  none !important
+
+    // transform: transalte3d(  0, 0, 10px ) !important
     .swiper-slide
         // min-height: 100% !important
         // flex-basis: 100% !important
         // flex-shrink: 0 !important
         opacity 1 !important
+    .our-work-hero__img-wrap
+        // position absolute !important
+        // z-index 30 !important
+        // transform:  translate3d(0px, 0px, 10px) !important
+
+// .our-work-hero__img-slider, .our-work-hero__img-list, .our-work-hero__img-item, .our-work-hero__img-wrap, .our-work-hero__img-cont, .our-work-hero__img
+//     translate: 0px 0px 10px !important
+//     transform: translate3d(0px,0px,0px) !important
+//     z-index 30 !important
+// .our-work-hero__img-slider-wrap
+//     perspective: 100px !important
+// .study-hero__lines
+//     translate 0px 0px 0px !important
+//     transform: translate3d(0px,0px,0px) !important
+//     background: gray
+.our-work-hero__img-slider, .our-work-hero__img-list, .our-work-hero__img-item, .our-work-hero__img-wrap, .our-work-hero__img-cont
+    transform: none !important // to prevent the transform stacking context (so lines will go between the solid bg and image)
+
