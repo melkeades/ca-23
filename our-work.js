@@ -3,6 +3,7 @@ import './our-work.styl'
 import Swiper from 'swiper'
 import { Autoplay, Controller, EffectFade, Navigation, Pagination } from 'swiper/modules'
 import gsap from 'gsap'
+import Hammer from 'hammerjs'
 
 // import 'swiper/css'
 // import 'swiper/css/navigation'
@@ -18,24 +19,23 @@ export default function OurWork() {
 
     const ourWorkImgSwiper = new Swiper('.our-work-hero__img-slider', {
       modules: [Controller, EffectFade],
-      // slidesPerView: 1,
       effect: 'fade',
       loop: true,
       speed: 1,
+      allowTouchMove: false,
     })
 
     const ourWorkInfoSwiper = new Swiper('.our-work-hero__info-slider', {
       modules: [Pagination, Controller, Autoplay, EffectFade, Navigation],
-      loop: true, // either loop or snappy arrow click nav, not both
-      // rewind: true,
+      loop: true,
       effect: 'fade',
       speed: 1,
       // spaceBetween: 48,
       // autoplay: {
       //   delay: 4000,
       // },
-      allowTouchMove: false,
 
+      allowTouchMove: false,
       pagination: {
         clickable: true,
         bulletClass: 'bullet',
@@ -47,12 +47,14 @@ export default function OurWork() {
         nextEl: '.our-work-hero__arrows .arrow:not(.arrow--left)',
       },
     })
-    // sel('.our-work-hero .arrow--left').addEventListener('click', (e) => {
-    //   ourWorkInfoSwiper.slidePrev()
-    // })
-    // sel('.our-work-hero .arrow:not(.arrow--left)').addEventListener('click', (e) => {
-    //   ourWorkInfoSwiper.slideNext()
-    // })
+    const ht = new Hammer(sel('.our-work-hero'))
+    ht.on('swipeleft', (e) => {
+      ourWorkInfoSwiper.slidePrev()
+    })
+
+    ht.on('swiperight', (e) => {
+      ourWorkInfoSwiper.slideNext()
+    })
 
     ourWorkInfoSwiper.controller.control = ourWorkImgSwiper
     ourWorkImgSwiper.controller.control = ourWorkInfoSwiper
