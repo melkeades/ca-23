@@ -171,14 +171,12 @@ export function addObserver(element, className, callback) {
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-export function scrollTriggerInit(distance = 0, elClassName = '', sectionClassName = '', type = '', position = '', markers = false) {
-  const tlType = type === '' ? 'fromTo' : type
-  const stPosition = position === '' ? 'middle' : position
+export function scrollTriggerInit(distance = 0, elClassName = '', sectionClassName = '', fromToType = '', topMiddleBottom = '', markers = false) {
+  const tlType = fromToType === '' ? 'fromTo' : fromToType
+  const stPosition = topMiddleBottom === '' ? 'middle' : topMiddleBottom
   // negative distance = front object (faster on scroll), positive distance = back object (slower on scroll/more sticky)
   const tl = gsap.timeline({ defaults: { ease: 'none' } })
   if (tlType === 'fromTo') {
-    console.log('fromTo')
-
     let fromDistance = -distance,
       toDistance = distance
     // remove the minus sign in a string for fromDistance

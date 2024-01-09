@@ -9,6 +9,7 @@ import About from './about'
 import Blog from './blog'
 import Study from './study'
 import Test from './test'
+import Service from './service'
 import BlogPost from './blog-post'
 import { debounce, onDomReady, scrollTriggerInit, sel, vh } from './utils'
 
@@ -104,6 +105,9 @@ switch (sel('.page-wrapper').getAttribute('data-page')) {
     break
   case 'services':
     // Services()
+    break
+  case 'service':
+    Service()
     break
   case 'test':
     Test()
