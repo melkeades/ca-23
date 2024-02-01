@@ -149,7 +149,7 @@ export default function home() {
     animateDots()
     laptopImagePosition()
 
-    scrollTriggerInit('50%', 'hero__img', 'home-hero', 'to', 'top')
+    scrollTriggerInit('50%', 'hero__video', 'home-hero', 'to', 'top')
     // cardHover()
     gsap.matchMedia().add(
       {
