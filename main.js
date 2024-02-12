@@ -84,41 +84,44 @@ if (sel('.contact-sec')) {
   }).observe(document.body)
   // })
 }
-
-switch (sel('.page-wrapper').getAttribute('data-page')) {
-  case 'home':
-    Home()
-    break
-  case 'our-work':
-    OurWork()
-    break
-  case 'study':
-    Study()
-    break
-  case 'blog':
-    Blog()
-    break
-  case 'blog-post':
-    BlogPost()
-    break
-  case 'about':
-    About()
-    break
-  case 'services':
-    // Services()
-    break
-  case 'service':
-    Service()
-    break
-  case 'test':
-    Test()
-    break
-  case 'lp':
-    LP()
-    break
-  case 'error':
-    error()
-    break
-  default:
-    console.log('unknown data-page')
+try {
+  switch (sel('.page-wrapper').getAttribute('data-page')) {
+    case 'home':
+      Home()
+      break
+    case 'our-work':
+      OurWork()
+      break
+    case 'study':
+      Study()
+      break
+    case 'blog':
+      Blog()
+      break
+    case 'blog-post':
+      BlogPost()
+      break
+    case 'about':
+      About()
+      break
+    case 'services':
+      // Services()
+      break
+    case 'service':
+      Service()
+      break
+    case 'test':
+      Test()
+      break
+    case 'lp':
+      LP()
+      break
+    case 'error':
+      error()
+      break
+    default:
+      console.log('unknown data-page')
+  }
+} catch (e) {
+  console.log(e)
 }
