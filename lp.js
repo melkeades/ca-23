@@ -48,6 +48,7 @@ export default function lp() {
 
       breakpoints: {
         767: {
+          perPage: 1,
           gap: '1.25rem',
         },
       },
