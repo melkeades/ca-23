@@ -5,10 +5,10 @@ import { Autoplay, Controller, EffectFade, Navigation, Pagination } from 'swiper
 import gsap from 'gsap'
 import Hammer from 'hammerjs'
 
-// import 'swiper/css'
+import 'swiper/css'
 // import 'swiper/css/navigation'
 // import 'swiper/css/pagination'
-// import 'swiper/css/effect-fade'
+import 'swiper/css/effect-fade'
 
 export default function OurWork() {
   onDomReady(function () {

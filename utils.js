@@ -49,9 +49,17 @@ export function removeSplideClasses(slider) {
   list.classList.remove('splide__list')
   slide.forEach((slide) => slide.classList.remove('splide__slide'))
 }
-export function addSplideClasses(slider) {
-  const splide = document.querySelector('.' + slider)
-  const track = splide.children[0]
+export function addSplideClasses(slider, trackClass = '') {
+  let splide
+  if (typeof slider === 'string') {
+    splide = document.querySelector('.' + slider)
+  } else if (isDomEl(slider)) {
+    splide = slider
+  }
+  // const track = splide.children[0]
+  // const track = splide.querySelector('.w-dyn-list')
+  const track = trackClass === '' ? splide.querySelector('.w-dyn-list') : splide.querySelector(trackClass)
+
   const list = track.children[0]
   const slide = list.childNodes
   splide.classList.add('splide')
@@ -119,7 +127,7 @@ export function splideAutoWidth(splide) {
 
     if (lastSlide) {
       // Toggles `justify-content: center`
-      list.style.justifyContent = isOverflow ? '' : 'center'
+      list.style.justifyContent = isOverflow ? 'flex-start' : 'center'
 
       // Remove the last margin
       if (!isOverflow) {

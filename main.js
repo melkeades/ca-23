@@ -8,9 +8,10 @@ import OurWork from './our-work'
 import About from './about'
 import Blog from './blog'
 import Study from './study'
-import Test from './test'
+// import Test from './test'
 import Service from './service'
 import BlogPost from './blog-post'
+import LP from './lp'
 import { debounce, onDomReady, scrollTriggerInit, sel, vh } from './utils'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -111,6 +112,9 @@ switch (sel('.page-wrapper').getAttribute('data-page')) {
     break
   case 'test':
     Test()
+    break
+  case 'lp':
+    LP()
     break
   case 'error':
     error()
