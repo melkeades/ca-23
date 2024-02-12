@@ -24,21 +24,22 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0)
 
 const navbarSticky$ = sel('.navbar-sticky .navbar')
-
-const navbarTl = gsap.to(navbarSticky$, {
-  keyframes: { '0%': { opacity: 0 }, '30%': { opacity: 1 }, '100%': { opacity: 1 } },
-  yPercent: 100,
-  ease: 'linear',
-  paused: true,
-})
-ScrollTrigger.create({
-  trigger: 'body',
-  start: vh(160) + ' top',
-  onToggle({ direction, getVelocity }) {
-    // to reverse the easing
-    gsap.to(navbarTl, { duration: 1.5, progress: direction === 1 ? 1 : 0, ease: 'expo.out' })
-  },
-})
+if (navbarSticky$) {
+  const navbarTl = gsap.to(navbarSticky$, {
+    keyframes: { '0%': { opacity: 0 }, '30%': { opacity: 1 }, '100%': { opacity: 1 } },
+    yPercent: 100,
+    ease: 'linear',
+    paused: true,
+  })
+  ScrollTrigger.create({
+    trigger: 'body',
+    start: vh(160) + ' top',
+    onToggle({ direction, getVelocity }) {
+      // to reverse the easing
+      gsap.to(navbarTl, { duration: 1.5, progress: direction === 1 ? 1 : 0, ease: 'expo.out' })
+    },
+  })
+}
 // contact form parallax
 if (sel('.contact-sec')) {
   // console.log('cont')
@@ -84,44 +85,41 @@ if (sel('.contact-sec')) {
   }).observe(document.body)
   // })
 }
-try {
-  switch (sel('.page-wrapper').getAttribute('data-page')) {
-    case 'home':
-      Home()
-      break
-    case 'our-work':
-      OurWork()
-      break
-    case 'study':
-      Study()
-      break
-    case 'blog':
-      Blog()
-      break
-    case 'blog-post':
-      BlogPost()
-      break
-    case 'about':
-      About()
-      break
-    case 'services':
-      // Services()
-      break
-    case 'service':
-      Service()
-      break
-    case 'test':
-      Test()
-      break
-    case 'lp':
-      LP()
-      break
-    case 'error':
-      error()
-      break
-    default:
-      console.log('unknown data-page')
-  }
-} catch (e) {
-  console.log(e)
+const dataPage = sel('.page-wrapper')?.getAttribute('data-page')
+switch (dataPage) {
+  case 'home':
+    Home()
+    break
+  case 'our-work':
+    OurWork()
+    break
+  case 'study':
+    Study()
+    break
+  case 'blog':
+    Blog()
+    break
+  case 'blog-post':
+    BlogPost()
+    break
+  case 'about':
+    About()
+    break
+  case 'services':
+    // Services()
+    break
+  case 'service':
+    Service()
+    break
+  case 'test':
+    Test()
+    break
+  case 'lp':
+    LP()
+    break
+  case 'error':
+    error()
+    break
+  default:
+    console.log('unknown data-page:', dataPage)
 }
