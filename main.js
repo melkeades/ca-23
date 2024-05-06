@@ -17,7 +17,11 @@ import { debounce, onDomReady, scrollTriggerInit, sel, vh } from './utils'
 gsap.registerPlugin(ScrollTrigger)
 ScrollTrigger.config({ ignoreMobileResize: true })
 
-const lenis = new Lenis()
+const lenis = new Lenis({
+  smoothWheel: true,
+  syncTouch: false,
+  duration: 1.1,
+})
 lenis.on('scroll', ScrollTrigger.update)
 gsap.ticker.add((time) => {
   lenis.raf(time * 1000)
