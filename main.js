@@ -15,13 +15,13 @@ import LP from './lp'
 import { debounce, mm, onDomReady, scrollTriggerInit, sel, vh } from './utils'
 
 document.body.style.opacity = 0.4
-gsap.registerPlugin(ScrollTrigger)
-const lenis = new Lenis()
-lenis.on('scroll', ScrollTrigger.update)
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000)
-})
-gsap.ticker.lagSmoothing(0)
+// gsap.registerPlugin(ScrollTrigger)
+// const lenis = new Lenis()
+// lenis.on('scroll', ScrollTrigger.update)
+// gsap.ticker.add((time) => {
+//   lenis.raf(time * 1000)
+// })
+// gsap.ticker.lagSmoothing(0)
 
 // const navbarSticky$ = sel('.navbar-sticky .navbar')
 // if (navbarSticky$) {

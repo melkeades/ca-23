@@ -7,8 +7,6 @@ import '@splidejs/splide/css'
 import { Intersection } from '@splidejs/splide-extension-intersection'
 import { addSplideClasses, connectSplideArrows, connectSplideBullets, onDomReady, scrollTriggerInit, sel, selAll, splideAutoWidth } from './utils'
 export default function lp() {
-  console.log('asdf')
-
   function heroSliderInit() {
     const classPrefix = 'daas-header'
     const slider$ = sel(`.${classPrefix}__slider`)
