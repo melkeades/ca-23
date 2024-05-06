@@ -14,6 +14,7 @@ import BlogPost from './blog-post'
 import LP from './lp'
 import { debounce, mm, onDomReady, scrollTriggerInit, sel, vh } from './utils'
 
+document.body.style.opacity = 0.7
 gsap.registerPlugin(ScrollTrigger)
 // mm.add('(min-width: 991px)', () => {
 //   const lenis = new Lenis()
