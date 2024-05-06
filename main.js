@@ -19,7 +19,7 @@ ScrollTrigger.config({ ignoreMobileResize: true })
 
 const lenis = new Lenis({
   smoothWheel: true,
-  syncTouch: false,
+  syncTouch: true,
   duration: 1.1,
 })
 lenis.on('scroll', ScrollTrigger.update)
