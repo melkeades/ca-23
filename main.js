@@ -23,23 +23,23 @@ gsap.ticker.add((time) => {
 })
 gsap.ticker.lagSmoothing(0)
 
-const navbarSticky$ = sel('.navbar-sticky .navbar')
-if (navbarSticky$) {
-  const navbarTl = gsap.to(navbarSticky$, {
-    keyframes: { '0%': { opacity: 0 }, '30%': { opacity: 1 }, '100%': { opacity: 1 } },
-    yPercent: 100,
-    ease: 'linear',
-    paused: true,
-  })
-  ScrollTrigger.create({
-    trigger: 'body',
-    start: vh(160) + ' top',
-    onToggle({ direction, getVelocity }) {
-      // to reverse the easing
-      gsap.to(navbarTl, { duration: 1.5, progress: direction === 1 ? 1 : 0, ease: 'expo.out' })
-    },
-  })
-}
+// const navbarSticky$ = sel('.navbar-sticky .navbar')
+// if (navbarSticky$) {
+//   const navbarTl = gsap.to(navbarSticky$, {
+//     keyframes: { '0%': { opacity: 0 }, '30%': { opacity: 1 }, '100%': { opacity: 1 } },
+//     yPercent: 100,
+//     ease: 'linear',
+//     paused: true,
+//   })
+//   ScrollTrigger.create({
+//     trigger: 'body',
+//     start: vh(160) + ' top',
+//     onToggle({ direction, getVelocity }) {
+//       // to reverse the easing
+//       gsap.to(navbarTl, { duration: 1.5, progress: direction === 1 ? 1 : 0, ease: 'expo.out' })
+//     },
+//   })
+// }
 // contact form parallax
 if (sel('.contact-sec')) {
   // console.log('cont')
