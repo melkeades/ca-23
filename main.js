@@ -14,14 +14,15 @@ import BlogPost from './blog-post'
 import LP from './lp'
 import { debounce, onDomReady, scrollTriggerInit, sel, vh } from './utils'
 
-// gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger)
+ScrollTrigger.config({ ignoreMobileResize: true })
 
-// const lenis = new Lenis()
-// lenis.on('scroll', ScrollTrigger.update)
-// gsap.ticker.add((time) => {
-//   lenis.raf(time * 1000)
-// })
-// gsap.ticker.lagSmoothing(0)
+const lenis = new Lenis()
+lenis.on('scroll', ScrollTrigger.update)
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000)
+})
+gsap.ticker.lagSmoothing(0)
 
 const navbarSticky$ = sel('.navbar-sticky .navbar')
 if (navbarSticky$) {
