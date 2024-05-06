@@ -14,32 +14,32 @@ import BlogPost from './blog-post'
 import LP from './lp'
 import { debounce, onDomReady, scrollTriggerInit, sel, vh } from './utils'
 
-gsap.registerPlugin(ScrollTrigger)
+// gsap.registerPlugin(ScrollTrigger)
 
-const lenis = new Lenis()
-lenis.on('scroll', ScrollTrigger.update)
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000)
-})
-gsap.ticker.lagSmoothing(0)
+// const lenis = new Lenis()
+// lenis.on('scroll', ScrollTrigger.update)
+// gsap.ticker.add((time) => {
+//   lenis.raf(time * 1000)
+// })
+// gsap.ticker.lagSmoothing(0)
 
-// const navbarSticky$ = sel('.navbar-sticky .navbar')
-// if (navbarSticky$) {
-//   const navbarTl = gsap.to(navbarSticky$, {
-//     keyframes: { '0%': { opacity: 0 }, '30%': { opacity: 1 }, '100%': { opacity: 1 } },
-//     yPercent: 100,
-//     ease: 'linear',
-//     paused: true,
-//   })
-//   ScrollTrigger.create({
-//     trigger: 'body',
-//     start: vh(160) + ' top',
-//     onToggle({ direction, getVelocity }) {
-//       // to reverse the easing
-//       gsap.to(navbarTl, { duration: 1.5, progress: direction === 1 ? 1 : 0, ease: 'expo.out' })
-//     },
-//   })
-// }
+const navbarSticky$ = sel('.navbar-sticky .navbar')
+if (navbarSticky$) {
+  const navbarTl = gsap.to(navbarSticky$, {
+    keyframes: { '0%': { opacity: 0 }, '30%': { opacity: 1 }, '100%': { opacity: 1 } },
+    yPercent: 100,
+    ease: 'linear',
+    paused: true,
+  })
+  ScrollTrigger.create({
+    trigger: 'body',
+    start: vh(160) + ' top',
+    onToggle({ direction, getVelocity }) {
+      // to reverse the easing
+      gsap.to(navbarTl, { duration: 1.5, progress: direction === 1 ? 1 : 0, ease: 'expo.out' })
+    },
+  })
+}
 // contact form parallax
 if (sel('.contact-sec')) {
   // console.log('cont')
