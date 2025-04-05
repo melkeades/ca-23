@@ -1,7 +1,8 @@
 
 [slider-cut] .w-dyn-item
   display flex !important
-  // display block !important
+  //display block !important
+
 .splide__list.w-dyn-items
   justify-content start
   grid-row-gap unset
@@ -9,8 +10,7 @@
 
 .daas-header__slider, .daas-testimonials__slider
   .splide__track
-    overflow: visible !important
-
+    overflow visible !important
 
 html.lenis, html.lenis body
   height auto
@@ -54,27 +54,42 @@ html.lenis, html.lenis body
       .brand
         padding 0 0 .5rem
 
-@media screen and (min-width: 992px)
+@media screen and (min-width 992px)
   .other-services__card
     &:first-child
       background var(--prime-card)
 
     &:nth-of-type(odd)
-      transform translateY( calc(-50% - 1.125rem))
+      transform translateY(calc(-50% - 1.125rem))
 
-@media screen and (min-width: 768px)
+@media screen and (min-width 768px)
   .collection__list_team_grid.is--on .team__member-w
     transition all 300ms ease-out
-    background: rgba(30,30,36,0)
+    background rgba(30, 30, 36, 0)
+
     .team__member-hover
       position absolute
       opacity 0
-      transition: inherit
+      transition inherit
+
     .team__member-img-w
-      transition: inherit
+      transition inherit
+
     &:hover
-      background: rgba(30,30,36,1)
+      background rgba(30, 30, 36, 1)
+
       .team__member-hover
         opacity 1
+
       .team__member-img-w
         opacity 0
+
+[data-page = 'form'], [data-page = 'form2']
+  input, select
+    height auto
+
+  select
+    //padding 0
+    option
+      background black
+      color white

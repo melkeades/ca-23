@@ -1,0 +1,26 @@
+{
+    "sourceFile": "form2.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1743812267729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1743812273679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n import { sel } from './utils'\r\n-export default function Service() {\r\n+export default function Form2() {\r\n   console.log('tt')\r\n }\r\n"
+                },
+                {
+                    "date": 1743812395569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,12 @@\n import { sel } from './utils'\r\n export default function Form2() {\r\n   console.log('tt')\r\n+  const activeColor = '#ff8125'\r\n+  const inactiveColor = '#000000'\r\n+\r\n+  const inputRange$a = document.querySelector('#inputRange')\r\n+  inputRange$a.addEventListener('input', function () {\r\n+    const ratio = ((this.value - this.min) / (this.max - this.min)) * 100\r\n+    this.style.background = `linear-gradient(90deg, ${activeColor} ${ratio}%, ${inactiveColor} ${ratio}%)`\r\n+  })\r\n }\r\n"
+                }
+            ],
+            "date": 1743812267729,
+            "name": "Commit-0",
+            "content": "import { sel } from './utils'\r\nexport default function Service() {\r\n  console.log('tt')\r\n}\r\n"
+        }
+    ]
+}

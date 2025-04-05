@@ -12,6 +12,8 @@ import Study from './study'
 import Service from './service'
 import BlogPost from './blog-post'
 import LP from './lp'
+import Form2 from './form2'
+
 import { debounce, mm, onDomReady, scrollTriggerInit, sel, vh } from './utils'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -120,6 +122,9 @@ switch (dataPage) {
     break
   case 'lp':
     LP()
+    break
+  case 'form2':
+    Form2()
     break
   case 'error':
     error()
