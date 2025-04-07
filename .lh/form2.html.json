@@ -1,0 +1,18 @@
+{
+    "sourceFile": "form2.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1743869541828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1743869541828,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>Interactive Form</title>\r\n    <link rel=\"stylesheet\" href=\"form2.css\" />\r\n  </head>\r\n  <body>\r\n    <div class=\"form-container\">\r\n      <h1>Let's Make Magic Happen</h1>\r\n      <form>\r\n        <div class=\"form-group\">\r\n          <p>Have you worked with an agency before?</p>\r\n          <div class=\"radio-group\">\r\n            <div class=\"radio-option\">Yes</div>\r\n            <div class=\"radio-option\">No</div>\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <p>What's your monthly budget for design/marketing/dev?</p>\r\n          <div class=\"radio-group\">\r\n            <div class=\"radio-option\">$3,000 - $6,000</div>\r\n            <div class=\"radio-option\">$6,000 - $60,000</div>\r\n            <div class=\"radio-option\">$60,000 - $600,000</div>\r\n            <div class=\"radio-option\">Not Sure</div>\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <p>How long are you looking for support?</p>\r\n          <div class=\"dropdown\">\r\n            <span class=\"dropdown-selected\">Select an option</span>\r\n            <div class=\"dropdown-options\">\r\n              <div class=\"dropdown-option\">Less than 1 week</div>\r\n              <div class=\"dropdown-option\">1-4 weeks</div>\r\n              <div class=\"dropdown-option\">1-3 months</div>\r\n              <div class=\"dropdown-option\">More than 3 months</div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <p>What's the #1 thing you want to improve right now?</p>\r\n          <input type=\"text\" placeholder=\"Regular input\" />\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <p>On a scale from 'I kinda need help' to 'Help me, Chimp gods!' — how urgent is your project?</p>\r\n          <input type=\"range\" id=\"inputRange\" min=\"1\" max=\"10\" value=\"5\" />\r\n        </div>\r\n        <button type=\"submit\" class=\"submit-btn\">Send</button>\r\n      </form>\r\n    </div>\r\n    <script type=\"module\" src=\"form2.js\"></script>\r\n  </body>\r\n</html>\r\n"
+        }
+    ]
+}

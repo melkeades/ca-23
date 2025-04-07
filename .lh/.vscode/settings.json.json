@@ -1,0 +1,26 @@
+{
+    "sourceFile": ".vscode/settings.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1743869543239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1743869548601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n {\r\n-  \"liveServer.settings.port\": 5505\r\n+  \"liveServer.settings.port\": 5506\r\n }\r\n"
+                },
+                {
+                    "date": 1743869553927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n {\r\n-  \"liveServer.settings.port\": 5510\r\n+  \"liveServer.settings.port\": 5511\r\n }\r\n"
+                }
+            ],
+            "date": 1743869543239,
+            "name": "Commit-0",
+            "content": "{\r\n  \"liveServer.settings.port\": 5501\r\n}\r\n"
+        }
+    ]
+}

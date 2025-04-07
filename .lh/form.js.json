@@ -1,0 +1,26 @@
+{
+    "sourceFile": "form.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1744034414842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1744036135866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,10 @@\n import { sel } from './utils'\r\n \r\n export default function Form() {\r\n   console.log('form')\r\n+  const email$ = sel('#email')\r\n+  \r\n+  email$.addEventListener('input', (event) => {\r\n+    localStorage.setItem('userEmail', event.target.value);\r\n+  });\r\n }\r\n"
+                },
+                {
+                    "date": 1744036262960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n export default function Form() {\r\n   console.log('form')\r\n   const email$ = sel('#email')\r\n-  \r\n+\r\n   email$.addEventListener('input', (event) => {\r\n-    localStorage.setItem('userEmail', event.target.value);\r\n-  });\r\n+    localStorage.setItem('userEmail', event.target.value)\r\n+  })\r\n }\r\n"
+                }
+            ],
+            "date": 1744034414842,
+            "name": "Commit-0",
+            "content": "import { sel } from './utils'\r\n\r\nexport default function Form() {\r\n  console.log('form')\r\n}\r\n"
+        }
+    ]
+}
