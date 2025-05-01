@@ -87,6 +87,10 @@ html.lenis, html.lenis body
 [data-page = 'form'], [data-page = 'form2']
   input, select
     height auto
+    color-scheme dark !important
+
+    &:-webkit-autofill, &:-webkit-autofill:focus
+      -webkit-box-shadow 0 0 0px 1000px #1E1E22 inset
 
   select
     //padding 0
